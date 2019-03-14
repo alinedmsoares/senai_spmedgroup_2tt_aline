@@ -11,6 +11,10 @@ INSERT INTO USUARIO(EMAIL,SENHA,ID_TIPO_DE_USUARIO)
 VALUES ('ricardo.lemos@spmedicalgroup.com.br','123456',2),
 	('roberto.possarle@spmedicalgroup.com.br','123456',2),
 	('helena.souza@spmedicalgroup.com.br','123456',2)
+
+INSERT INTO USUARIO(EMAIL,SENHA,ID_TIPO_DE_USUARIO)
+VALUES('admin@admin.com','admin',1)
+
 INSERT INTO USUARIO(EMAIL,SENHA,ID_TIPO_DE_USUARIO)
 VALUES('ligia@gmail.com','123456',3),
 	('alexandre@gmail.com','123456',3),

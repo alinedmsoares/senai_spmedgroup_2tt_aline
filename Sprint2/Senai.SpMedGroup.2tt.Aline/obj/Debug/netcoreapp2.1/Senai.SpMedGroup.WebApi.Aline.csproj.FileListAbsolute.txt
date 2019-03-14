@@ -1,0 +1,28 @@
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\bin\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.deps.json
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\bin\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.runtimeconfig.json
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\bin\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.runtimeconfig.dev.json
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\bin\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.dll
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\bin\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.pdb
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.csprojAssemblyReference.cache
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.csproj.CoreCompileInputs.cache
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.RazorAssemblyInfo.cache
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.RazorAssemblyInfo.cs
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.AssemblyInfoInputs.cache
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.AssemblyInfo.cs
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.RazorTargetAssemblyInfo.cache
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.dll
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.pdb
+C:\Users\52232950808\Documents\SENAI\Sprint 2\BackEnd\Senai.SpMedicalGroup.WebApi\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.csprojAssemblyReference.cache
+C:\Users\52232950808\Documents\SENAI\Sprint 2\BackEnd\Senai.SpMedicalGroup.WebApi\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.csproj.CoreCompileInputs.cache
+C:\Users\52232950808\Documents\SENAI\Sprint 2\BackEnd\Senai.SpMedicalGroup.WebApi\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.RazorAssemblyInfo.cache
+C:\Users\52232950808\Documents\SENAI\Sprint 2\BackEnd\Senai.SpMedicalGroup.WebApi\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.RazorAssemblyInfo.cs
+C:\Users\52232950808\Documents\SENAI\Sprint 2\BackEnd\Senai.SpMedicalGroup.WebApi\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.AssemblyInfoInputs.cache
+C:\Users\52232950808\Documents\SENAI\Sprint 2\BackEnd\Senai.SpMedicalGroup.WebApi\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.AssemblyInfo.cs
+C:\Users\52232950808\Documents\SENAI\Sprint 2\BackEnd\Senai.SpMedicalGroup.WebApi\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.dll
+C:\Users\52232950808\Documents\SENAI\Sprint 2\BackEnd\Senai.SpMedicalGroup.WebApi\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.pdb
+C:\Users\52232950808\Documents\SENAI\Sprint 2\BackEnd\Senai.SpMedicalGroup.WebApi\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\bin\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.deps.json
+C:\Users\52232950808\Documents\SENAI\Sprint 2\BackEnd\Senai.SpMedicalGroup.WebApi\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\bin\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.runtimeconfig.json
+C:\Users\52232950808\Documents\SENAI\Sprint 2\BackEnd\Senai.SpMedicalGroup.WebApi\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\bin\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.runtimeconfig.dev.json
+C:\Users\52232950808\Documents\SENAI\Sprint 2\BackEnd\Senai.SpMedicalGroup.WebApi\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\bin\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.dll
+C:\Users\52232950808\Documents\SENAI\Sprint 2\BackEnd\Senai.SpMedicalGroup.WebApi\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\bin\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.pdb
+C:\Users\52232950808\Documents\SENAI\Sprint 2\BackEnd\Senai.SpMedicalGroup.WebApi\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.WebApi.Aline.RazorTargetAssemblyInfo.cache

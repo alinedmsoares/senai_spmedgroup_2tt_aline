@@ -1,0 +1,11 @@
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\bin\Debug\netcoreapp2.1\Senai.SpMedGroup.2tt.Aline.deps.json
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\bin\Debug\netcoreapp2.1\Senai.SpMedGroup.2tt.Aline.runtimeconfig.json
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\bin\Debug\netcoreapp2.1\Senai.SpMedGroup.2tt.Aline.runtimeconfig.dev.json
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\bin\Debug\netcoreapp2.1\Senai.SpMedGroup.2tt.Aline.dll
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.2tt.Aline.csprojAssemblyReference.cache
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.2tt.Aline.csproj.CoreCompileInputs.cache
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.2tt.Aline.RazorAssemblyInfo.cache
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.2tt.Aline.RazorAssemblyInfo.cs
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.2tt.Aline.AssemblyInfoInputs.cache
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.2tt.Aline.AssemblyInfo.cs
+C:\Users\52232950808\source\repos\Senai.SpMedGroup.2tt.Aline\Senai.SpMedGroup.2tt.Aline\obj\Debug\netcoreapp2.1\Senai.SpMedGroup.2tt.Aline.RazorTargetAssemblyInfo.cache
