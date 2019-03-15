@@ -151,6 +151,23 @@
 						"description": ""
 					},
 					"response": []
+				},
+				{
+					"name": "Deletar Consulta",
+					"request": {
+						"url": "http://localhost:5000/api/consultas",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU5MDYwNCwiaXNzIjoiU3BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTcE1lZEdyb3VwLldlYkFwaSJ9.wd4rZHe-0ipaimVn1AmbiyqUmiJASEEOj45-G_ogA_8",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
 				}
 			]
 		},
@@ -166,7 +183,49 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU4NTMwMSwiaXNzIjoiU3BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTcE1lZEdyb3VwLldlYkFwaSJ9.0j4QtQvVBYL9SSLP7YvsHpYsi215Vu_Ud--mdDWgUTU",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU5MDYwNCwiaXNzIjoiU3BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTcE1lZEdyb3VwLldlYkFwaSJ9.wd4rZHe-0ipaimVn1AmbiyqUmiJASEEOj45-G_ogA_8",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar um novo médico",
+					"request": {
+						"url": "http://localhost:5000/api/medicos",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU5MDYwNCwiaXNzIjoiU3BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTcE1lZEdyb3VwLldlYkFwaSJ9.wd4rZHe-0ipaimVn1AmbiyqUmiJASEEOj45-G_ogA_8",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"nome\": \"Aline\",\n        \"crm\": \"65673\",\n        \"idEspecialidade\": 12,\n        \"idClinica\": 1,\n        \"idUsuario\": 5\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Médico",
+					"request": {
+						"url": "http://localhost:5000/api/medicos/4",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU5MDYwNCwiaXNzIjoiU3BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTcE1lZEdyb3VwLldlYkFwaSJ9.wd4rZHe-0ipaimVn1AmbiyqUmiJASEEOj45-G_ogA_8",
 								"description": ""
 							}
 						],
@@ -189,7 +248,49 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU4NTMwMSwiaXNzIjoiU3BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTcE1lZEdyb3VwLldlYkFwaSJ9.0j4QtQvVBYL9SSLP7YvsHpYsi215Vu_Ud--mdDWgUTU",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU5MDYwNCwiaXNzIjoiU3BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTcE1lZEdyb3VwLldlYkFwaSJ9.wd4rZHe-0ipaimVn1AmbiyqUmiJASEEOj45-G_ogA_8",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar um novo prontuário",
+					"request": {
+						"url": "http://localhost:5000/api/pacientes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU5MDYwNCwiaXNzIjoiU3BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTcE1lZEdyb3VwLldlYkFwaSJ9.wd4rZHe-0ipaimVn1AmbiyqUmiJASEEOj45-G_ogA_8",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"nome\": \"Aline\",\n        \"dataDeNascimento\": \"2002-06-12T00:00:00\",\n        \"telefone\": \"11 98438-6724\",\n        \"rg\": \"789098762\",\n        \"cpf\": \"52232950808\",\n        \"endereco\": \"R Sao Antonio, 230 - Vila Universal, Barueri - SP, 06407-140\",\n        \"idUsuario\": 1\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Prontuário",
+					"request": {
+						"url": "http://localhost:5000/api/pacientes/9",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU5MDYwNCwiaXNzIjoiU3BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTcE1lZEdyb3VwLldlYkFwaSJ9.wd4rZHe-0ipaimVn1AmbiyqUmiJASEEOj45-G_ogA_8",
 								"description": ""
 							}
 						],
@@ -283,7 +384,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU4NTMwMSwiaXNzIjoiU3BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTcE1lZEdyb3VwLldlYkFwaSJ9.0j4QtQvVBYL9SSLP7YvsHpYsi215Vu_Ud--mdDWgUTU",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU5MDYwNCwiaXNzIjoiU3BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTcE1lZEdyb3VwLldlYkFwaSJ9.wd4rZHe-0ipaimVn1AmbiyqUmiJASEEOj45-G_ogA_8",
 								"description": ""
 							}
 						],
@@ -313,6 +414,17 @@
 							"mode": "raw",
 							"raw": "{\n        \"nomeFantasia\": \"Clinica Fernando\",\n        \"cnpj\": \"90087643210765\",\n        \"razaoSocial\": \"SP Médicos\",\n        \"endereco\": \"Av. Barão Limeira, 900, São Paulo, SP\",\n        \"horarioFuncionamento\": \"07:00 - 20:00\"\n    }"
 						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Clínica",
+					"request": {
+						"url": "http://localhost:5000/api/clinicas/3",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
 						"description": ""
 					},
 					"response": []
