@@ -69,3 +69,4 @@ EXEC spMOSTRAR_IDADE_PACIENTE
 SELECT * FROM Consulta where id_medico = 3
 
 
+

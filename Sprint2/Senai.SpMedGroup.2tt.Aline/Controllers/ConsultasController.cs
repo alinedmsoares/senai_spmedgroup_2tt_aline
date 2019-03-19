@@ -25,7 +25,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             ConsultaRepository = new ConsultaRepository();
         }
         //Cadastrando consultas
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult CadastrarConsulta(Consulta consulta)
         {
@@ -40,7 +40,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             }
         }
         //Listando consultas
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public IActionResult ListarConsultas()
         {
@@ -55,7 +55,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             }
         }
         //Listando consultas do paciente logado
-        [Authorize(Roles = "3")]
+        [Authorize(Roles = "Paciente")]
         [HttpGet("minhas")]
         public IActionResult MinhasConsultasPaciente()
         {
@@ -72,7 +72,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             }
         }
         //Listando consultas do médico logado
-        [Authorize(Roles = "2")]
+        [Authorize(Roles = "Médico")]
         [HttpGet("agendadas")]
         public IActionResult MinhasConsultasMedico()
         {
@@ -89,7 +89,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             }
         }
         //Cancelando consultas
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpPut("{id}")]
         public IActionResult CancelarConsulta(Consulta consulta, int id)
         {
@@ -110,7 +110,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             }
         }
         //Cadastrando descrição da consulta
-        [Authorize(Roles = "2")]
+        [Authorize(Roles = "Médico")]
         [HttpPut("descricao/{id}")]
         public IActionResult CadastrarDescricao(Consulta consulta, int id)
         {
@@ -130,7 +130,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
                 return BadRequest(new { mensagem = ex });
             }
         }
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

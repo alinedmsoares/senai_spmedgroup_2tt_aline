@@ -23,7 +23,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             PacienteRepository = new PacienteRepository();
         }
         //Listando todos os pacientes
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public IActionResult ListarPacientes()
         {
@@ -37,7 +37,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
                 return BadRequest();
             }
         }
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult CadastrarPaciente(Prontuario prontuario)
         {
@@ -51,7 +51,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
                 return BadRequest();
             }
         }
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

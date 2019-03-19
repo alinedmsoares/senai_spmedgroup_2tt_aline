@@ -23,7 +23,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             UsuarioRepository = new UsuarioRepository();
         }
         //Cadastrando um novo usuário
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult Cadastrar(Usuario usuario)
         {
@@ -38,7 +38,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             }
         }
         //Listando todos os usuários
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public IActionResult ListarUsuarios()
         {

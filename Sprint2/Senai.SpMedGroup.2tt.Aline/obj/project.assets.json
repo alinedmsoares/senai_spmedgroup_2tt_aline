@@ -12716,11 +12716,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\52232950808\\Documents\\SENAI\\Sprint 2\\BackEnd\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedGroup.2tt.Aline\\Senai.SpMedGroup.2tt.Aline\\Senai.SpMedGroup.WebApi.Aline.csproj",
+      "projectUniqueName": "C:\\Users\\52232950808\\Documents\\SENAI\\SENAI_SPMEDGROUP_2TT_ALINE\\Sprint2\\Senai.SpMedGroup.2tt.Aline\\Senai.SpMedGroup.WebApi.Aline.csproj",
       "projectName": "Senai.SpMedGroup.WebApi.Aline",
-      "projectPath": "C:\\Users\\52232950808\\Documents\\SENAI\\Sprint 2\\BackEnd\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedGroup.2tt.Aline\\Senai.SpMedGroup.2tt.Aline\\Senai.SpMedGroup.WebApi.Aline.csproj",
+      "projectPath": "C:\\Users\\52232950808\\Documents\\SENAI\\SENAI_SPMEDGROUP_2TT_ALINE\\Sprint2\\Senai.SpMedGroup.2tt.Aline\\Senai.SpMedGroup.WebApi.Aline.csproj",
       "packagesPath": "C:\\Users\\52232950808\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\52232950808\\Documents\\SENAI\\Sprint 2\\BackEnd\\Senai.SpMedicalGroup.WebApi\\Senai.SpMedGroup.2tt.Aline\\Senai.SpMedGroup.2tt.Aline\\obj\\",
+      "outputPath": "C:\\Users\\52232950808\\Documents\\SENAI\\SENAI_SPMEDGROUP_2TT_ALINE\\Sprint2\\Senai.SpMedGroup.2tt.Aline\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

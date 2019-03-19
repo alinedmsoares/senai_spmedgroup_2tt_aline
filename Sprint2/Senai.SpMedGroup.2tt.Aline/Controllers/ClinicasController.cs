@@ -23,7 +23,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             ClinicaRepository = new ClinicaRepository();
         }
         //Listando todas as clínicas
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public IActionResult ListarClinicas()
         {
@@ -38,7 +38,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             }
         }
         //Cadastrando clínicas
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult CadastrarClinica(Clinica clinica)
         {
@@ -52,7 +52,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
                 return BadRequest();
             }
         }
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

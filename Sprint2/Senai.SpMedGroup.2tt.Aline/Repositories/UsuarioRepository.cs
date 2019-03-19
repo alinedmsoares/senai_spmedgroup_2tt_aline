@@ -1,4 +1,5 @@
-﻿using Senai.SpMedGroup.WebApi.Aline.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.SpMedGroup.WebApi.Aline.Domains;
 using Senai.SpMedGroup.WebApi.Aline.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Repositories
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                Usuario usuarioBuscado = ctx.Usuario.Where(x => x.Email == email && x.Senha == senha).FirstOrDefault();
+                Usuario usuarioBuscado = ctx.Usuario.Where(x => x.Email == email && x.Senha == senha).Include(x => x.IdTipoDeUsuarioNavigation).FirstOrDefault();
                 return usuarioBuscado;
             }
         }

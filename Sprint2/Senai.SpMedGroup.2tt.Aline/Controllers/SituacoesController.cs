@@ -21,7 +21,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             SituacaoRepository = new SituacaoRepository();
         }
         //Listando todas as situações
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public IActionResult ListarSituacao()
         {

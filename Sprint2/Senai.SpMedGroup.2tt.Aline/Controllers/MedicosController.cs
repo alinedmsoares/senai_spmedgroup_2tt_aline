@@ -23,7 +23,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             MedicoRepository = new MedicoRepository();
         }
         //Listando todos os médicos
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public IActionResult ListarMedicos()
         {
@@ -38,7 +38,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             }
         }
 
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult CadastrarMedico(Medicos medico)
         {
@@ -52,7 +52,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
                 return BadRequest();
             }
         }
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
