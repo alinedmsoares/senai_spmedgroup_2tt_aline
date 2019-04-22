@@ -21,7 +21,7 @@ namespace Senai.SpMedGroup._2tt.Aline
                 options =>
                 {
                     options.SerializerSettings.ReferenceLoopHandling
-                     = Newtonsoft.Json.ReferenceLoopHandling.Error;
+                     = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                     options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
                 }).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 
@@ -79,13 +79,13 @@ namespace Senai.SpMedGroup._2tt.Aline
             app.UseSwagger();
 
 
+            app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "SpMedGroup API");
             });
             app.UseMvc();
 
-            app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             
         }

@@ -32,7 +32,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             try
             {
                 ConsultaRepository.CadastrarConsulta(consulta);
-                return Ok();
+                return Ok(consulta);
             }
             catch (Exception ex)
             {
@@ -46,7 +46,9 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
         {
             try
             {
-                return Ok(ConsultaRepository.ListarConsultas());
+                List<Consulta> listaConsultas = ConsultaRepository.ListarConsultas();
+
+                return Ok(listaConsultas);
             }
             catch (Exception ex)
             {
@@ -72,7 +74,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             }
         }
         //Listando consultas do médico logado
-        [Authorize(Roles = "Médico")]
+        [Authorize(Roles = "Medico")]
         [HttpGet("agendadas")]
         public IActionResult MinhasConsultasMedico()
         {
@@ -110,7 +112,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             }
         }
         //Cadastrando descrição da consulta
-        [Authorize(Roles = "Médico")]
+        [Authorize(Roles = "Medico")]
         [HttpPut("descricao/{id}")]
         public IActionResult CadastrarDescricao(Consulta consulta, int id)
         {

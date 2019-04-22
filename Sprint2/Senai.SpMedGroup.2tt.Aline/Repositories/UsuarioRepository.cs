@@ -32,7 +32,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Repositories
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                return ctx.Usuario.ToList();
+                return ctx.Usuario.Include(x => x.IdTipoDeUsuarioNavigation).ToList();
             }
         }
     }

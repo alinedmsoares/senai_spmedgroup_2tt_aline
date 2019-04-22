@@ -38,7 +38,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Controllers
             }
         }
         //Listando todos os usuários
-        [Authorize(Roles = "Administrador")]
+        [Authorize]
         [HttpGet]
         public IActionResult ListarUsuarios()
         {

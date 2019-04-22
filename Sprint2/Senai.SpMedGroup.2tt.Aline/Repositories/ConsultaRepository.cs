@@ -1,4 +1,5 @@
-﻿using Senai.SpMedGroup.WebApi.Aline.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.SpMedGroup.WebApi.Aline.Domains;
 using Senai.SpMedGroup.WebApi.Aline.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -61,7 +62,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Repositories
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                return ctx.Consulta.ToList();
+                return ctx.Consulta.Include(x => x.IdProntuarioNavigation).Include(x => x.IdMedicoNavigation).ToList();
             }
         }
 
@@ -75,7 +76,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Repositories
             }
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                return ctx.Consulta.Where(x => x.IdMedico == medico.Id).ToList();
+                return ctx.Consulta.Include(x => x.IdMedicoNavigation).Include(x => x.IdProntuarioNavigation).Where(x => x.IdMedico == medico.Id).ToList();
             }
         }
 
@@ -89,34 +90,11 @@ namespace Senai.SpMedGroup.WebApi.Aline.Repositories
             }
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                return ctx.Consulta.Where(x => x.IdProntuario == paciente.Id).ToList();
+                return ctx.Consulta.Include(x => x.IdProntuarioNavigation).Include(x => x.IdMedicoNavigation).Where(x => x.IdProntuario == paciente.Id).ToList();
             }
         }
     }
 
-        //public List<Consulta> ListarConsultasDeUmUsuario(int idUsuario)
-        //{
-        //    Prontuario paciente;
-        //    Medicos medico = new Medicos();
-        //    Usuario usuario = new Usuario();
-
-        //    if (IdTipoDeUsuario == 2)
-        //    {
-        //    using (SpMedGroupContext ctx = new SpMedGroupContext())
-        //    {
-        //        medico = ctx.Medicos.FirstOrDefault(x => x.IdUsuario == idUsuario);
-        //        return ctx.Consulta.Where(x => x.IdMedico == medico.Id).ToList();
-        //    }
-        //    }
-        //    else
-        //    {
-//            using (spmedgroupcontext ctx = new spmedgroupcontext())
-//            {
-//                paciente = ctx.prontuario.firstordefault(x => x.idusuario == idusuario);
-//                return ctx.consulta.where(x => x.idprontuario == paciente.id).tolist();
-//}
-//            }
-        //    }
 
     }
 
