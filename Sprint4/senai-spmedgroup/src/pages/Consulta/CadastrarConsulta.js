@@ -93,14 +93,19 @@ class CadastrarConsulta extends Component {
     }
     render() {
         return (
-            <div>  
+            <div className="consulta--cadastrar">  
+            <div className="cadastrar--consulta__menu">
                 <Menu/>
-                <h1>Cadastrar Consulta</h1>
+                </div>
+                <div className="consulta--cadastrar__form">
+                <h1 className="consulta--cadastrar__titulo">Cadastrar Consulta</h1>
 
-                <form onSubmit={this.CadastrarConsulta.bind(this)} noValidate>
+            <form onSubmit={this.CadastrarConsulta.bind(this)} noValidate className="consulta--cadastrar__formulario">
+            <div className="consulta--cadastrar__formulario_all">
+            <div className="consulta--cadastrar__formulario_form">
                     <select
                     value={this.state.idMedicoNavigation}
-                        onChange={this.atualizaEstadoMedico.bind(this)} required>
+                        onChange={this.atualizaEstadoMedico.bind(this)} required className="consulta--cadastrar__select">
                     <option>Selecione o médico</option>
                     {this.state.listaMedicos.map(element => {
                         return (
@@ -114,11 +119,14 @@ class CadastrarConsulta extends Component {
                     type="date"
                     value={this.state.dataConsulta}
                     onChange={this.atualizaEstadoData.bind(this)}
-                    placeholder="dd/MM/yyyyThh:mm"
+                    placeholder="Data da Consulta"
+                    className="consulta--cadastrar__input"
                 />
+                </div>
+                <div className="consulta--cadastrar__select_prontuario">
                 <select
                     value={this.state.idProntuarioNavigation}
-                    onChange={this.atualizaEstadoProntuario.bind(this)} required>
+                    onChange={this.atualizaEstadoProntuario.bind(this)} required className="consulta--cadastrar__select">
                 <option>Selecione o paciente</option>
                 {this.state.listaProntuarios.map(element => {
                     return (
@@ -128,12 +136,16 @@ class CadastrarConsulta extends Component {
                     );
                 })}
                 </select>
-
+                </div>
+                </div>
+                <div className="consulta--cadastrar__botao">
             <button onClick={this.CadastrarConsulta.bind(this)}>
                 Cadastrar
                 </button>
+                </div>
+
                 </form >
-                
+                </div>
                 </div >
                 )
     }

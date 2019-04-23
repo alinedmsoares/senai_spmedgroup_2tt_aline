@@ -80,7 +80,7 @@ class App extends Component {
                   id="inp"
                 />
                 <span class="label">Email</span>
-                <span class="border"></span>
+                <span className="border"></span>
               </label>
               <label for="inp" class="inp">
                 <input

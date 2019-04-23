@@ -1,0 +1,69 @@
+.consulta--listar{
+    background-color: #E6E6E6;
+  }
+  .consulta--listar__titulo{
+    font-family: "Roboto Light";
+    font-size: 2em;
+    color: #83BEDF;
+    margin: 0% 10% 0% 0%;
+  }
+  .consulta--listar__tabela{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+  }
+  .consulta--listar__tabela-th{
+      font-family: "Berlin Sans FB";
+      color: #CCCCCC;
+  }
+  .consulta--listar__tabela-tabela{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .consulta--listar__tabela-thead{
+      width: 100%;
+      display: flex;
+  }
+  .consulta--listar__tabela-tr{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1%;
+}
+.consulta--listar__tabela-tr-dados{
+    display: flex;
+    width: 80%;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin-bottom: 1%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 0px 8px rgb(0, 0, 0, 40%);
+
+    padding: 1%;
+}
+.consulta--listar__tabela-td{
+    
+    height: 2vh;
+    width: 80%;
+    font-family: "Berlin Sans FB";
+    color: #999999;
+    
+}
+.consulta--listar__tabela-tbody{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+    

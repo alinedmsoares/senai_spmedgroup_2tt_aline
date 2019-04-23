@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Axios from "axios";
 import apiService from "../../services/apiService";
+import '../../assets/css/listar-consulta.css';
+import Menu from "../../components/Menu/Menu"
+
 
 class ListarConsulta extends Component {
     constructor() {
@@ -94,29 +97,34 @@ class ListarConsulta extends Component {
     }
     render() {
         return (
-            <div>  
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Nome do Paciente</th>
-                            <th>Nome do Médico</th>
-                            <th>Data da Consulta</th>
-                            <th>Descricao</th>
-                            <th>Situacao</th>
+            <div className="consulta--listar">  
+            <div className="cadastrar--listar__menu">
+                <Menu/>
+                </div>
+                <h1 className="consulta--listar__titulo">Listar Consultas</h1>
+                <div className="consulta--listar__tabela">
+                <table className="consulta--listar__tabela-tabela">
+                    <thead className="consulta--listar__tabela-thead">
+                        <tr className="consulta--listar__tabela-tr">
+                            <th className="consulta--listar__tabela-th">#</th>
+                            <th className="consulta--listar__tabela-th">Paciente</th>
+                            <th className="consulta--listar__tabela-th">Médico</th>
+                            <th className="consulta--listar__tabela-th">Data da Consulta</th>
+                            <th className="consulta--listar__tabela-th">Descrição</th>
+                            <th className="consulta--listar__tabela-th">Situação</th>
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody className="consulta--listar__tabela-tbody">
                         {
                             this.state.listaConsultas.map(consulta => {
                                 return (
-                                    <tr key={consulta.id}>
-                                        <td>{consulta.id}</td>
-                                        <td>{consulta.idProntuarioNavigation.nome}</td>
-                                        <td>{consulta.idMedicoNavigation.nome}</td>
-                                        <td>{consulta.dataConsulta}</td>
-                                        <td>{consulta.descricao}</td>
+                                    <tr className="consulta--listar__tabela-tr-dados" key={consulta.id}>
+                                        <td className="consulta--listar__tabela-td">{consulta.id}</td>
+                                        <td className="consulta--listar__tabela-td">{consulta.idProntuarioNavigation.nome}</td>
+                                        <td className="consulta--listar__tabela-td">{consulta.idMedicoNavigation.nome}</td>
+                                        <td className="consulta--listar__tabela-td">{consulta.dataConsulta}</td>
+                                        <td className="consulta--listar__tabela-td">{consulta.descricao}</td>
                                         {/* <td>{consulta.idSituacaoNavigation.situacao1}</td> */}
                                     </tr>
                                 );
@@ -125,6 +133,7 @@ class ListarConsulta extends Component {
                         }
                     </tbody>
                 </table> 
+                </div>
                 </div >
                 )
     }
