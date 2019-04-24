@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Axios from "axios";
+import Menu from "../../components/Menu/Menu"
+import '../../assets/css/reset.css';
+import '../../assets/css/cadastrar-prontuario.css';
 import apiService from "../../services/apiService";
+
 
 
 class CadastrarProntuario extends Component {
@@ -8,10 +12,10 @@ class CadastrarProntuario extends Component {
         super();
         this.state = {
             listaProntuarios: [],
-            listaUsurios:[],
+            listaUsurios: [],
             nome: "",
             dataDeNascimento: "",
-            idUsuarioNavigation:"",
+            idUsuarioNavigation: "",
             telefone: "",
             rg: "",
             cpf: "",
@@ -20,11 +24,12 @@ class CadastrarProntuario extends Component {
     }
     buscarProntuario() {
         let jwt = localStorage.getItem('usuario-spmedgroup');
-        
-        Axios.get(`http://localhost:5000/api/pacientes`,{
-            headers:{
+
+        Axios.get(`http://localhost:5000/api/pacientes`, {
+            headers: {
                 "authorization": 'Bearer ' + jwt
-            }})
+            }
+        })
             .then(res => {
                 const prontuarios = res.data;
                 this.setState({ listaProntuarios: prontuarios })
@@ -32,11 +37,12 @@ class CadastrarProntuario extends Component {
     }
     buscarUsuarios() {
         let jwt = localStorage.getItem('usuario-spmedgroup');
-        
-        Axios.get(`http://localhost:5000/api/usuarios`,{
-            headers:{
+
+        Axios.get(`http://localhost:5000/api/usuarios`, {
+            headers: {
                 "authorization": 'Bearer ' + jwt
-            }})
+            }
+        })
             .then(res => {
                 const usuario = res.data;
                 this.setState({ listaUsurios: usuario })
@@ -69,7 +75,7 @@ class CadastrarProntuario extends Component {
 
         let prontuario = {
             nome: this.state.nome,
-            dataDeNascimento : this.state.dataDeNascimento,
+            dataDeNascimento: this.state.dataDeNascimento,
             telefone: this.state.telefone,
             rg: this.state.rg,
             cpf: this.state.cpf,
@@ -77,14 +83,15 @@ class CadastrarProntuario extends Component {
             endereco: this.state.endereco
         }
         let jwt = localStorage.getItem('usuario-spmedgroup');
-        Axios.post(`http://localhost:5000/api/pacientes`, prontuario,{
-            headers:{
+        Axios.post(`http://localhost:5000/api/pacientes`, prontuario, {
+            headers: {
                 "authorization": 'Bearer ' + jwt
-            }})
+            }
+        })
             .then(res => {
                 this.buscarProntuario()
             })
-            console.log(prontuario)
+        console.log(prontuario)
     }
     componentDidMount() {
         this.buscarProntuario();
@@ -92,64 +99,86 @@ class CadastrarProntuario extends Component {
     }
     render() {
         return (
-                <div>
-                <h1>Cadastrar Prontuário</h1>
+            <div className="prontuario--cadastrar">
+                <div className="cadastrar--prontuario__menu">
+                    <Menu />
+                </div>
+                <div className="prontuario--cadastrar__form">
 
-                <form onSubmit={this.CadastrarProntuario.bind(this)} noValidate>
-                    <input
-                        type="text"
-                        value={this.state.nome}
-                        onChange={this.atualizaEstadoNome.bind(this)}
-                        placeholder="Nome"
-                    />
-                    <input
-                        type="date"
-                        value={this.state.dataDeNascimento}
-                        onChange={this.atualizaEstadoData.bind(this)}
-                        placeholder="dd/MM/yyyy"
-                    />
-                    <input
-                        type="text"
-                        value={this.state.telefone}
-                        onChange={this.atualizaEstadoTelefone.bind(this)}
-                        placeholder="Telefone"
-                    />
-                    <input
-                        type="text"
-                        value={this.state.rg}
-                        onChange={this.atualizaEstadoRg.bind(this)}
-                        placeholder="Rg"
-                    />
-                    <input
-                        type="text"
-                        value={this.state.cpf}
-                        onChange={this.atualizaEstadoCpf.bind(this)}
-                        placeholder="CPF"
-                    />
-                    <select
-                    value={this.state.idUsuarioNavigation}
-                    onChange={this.atualizaEstadoUsuario.bind(this)} required>
-                <option>Selecione o email do usuário</option>
-                {this.state.listaUsurios.map(element => {
-                    return (
-                        <option key={element.id} value={element.id}>
-                            {element.email}
-                        </option>
-                    );
-                })}
-                </select>
-                    <input
-                        type="text"
-                        value={this.state.endereco}
-                        onChange={this.atualizaEstadoEndereco.bind(this)}
-                        placeholder="Endereço"
-                    />
-                    <button type="submit" onClick={this.CadastrarProntuario.bind(this)}>
-                        Cadastrar
+                    <h1 className="prontuario--cadastrar__titulo">Cadastrar Prontuário</h1>
+
+                    <form onSubmit={this.CadastrarProntuario.bind(this)} noValidate className="prontuario--cadastrar__formulario">
+                        <div className="prontuario--cadastrar__formulario_all">
+                        <div className="prontuario--cadastrar__formulario_1">
+                                <input
+                                    type="text"
+                                    value={this.state.nome}
+                                    onChange={this.atualizaEstadoNome.bind(this)}
+                                    placeholder="Nome"
+                                    className="prontuario--cadastrar__input"
+                                />
+                                <input
+                                    type="date"
+                                    value={this.state.dataDeNascimento}
+                                    onChange={this.atualizaEstadoData.bind(this)}
+                                    placeholder="dd/MM/yyyy"
+                                    className="prontuario--cadastrar__input"
+                                />
+                                <input
+                                    type="text"
+                                    value={this.state.telefone}
+                                    onChange={this.atualizaEstadoTelefone.bind(this)}
+                                    placeholder="Telefone"
+                                    className="prontuario--cadastrar__input"
+                                />
+</div>
+<div className="prontuario--cadastrar__formulario_2">
+                                <input
+                                    type="text"
+                                    value={this.state.rg}
+                                    onChange={this.atualizaEstadoRg.bind(this)}
+                                    placeholder="Rg"
+                                    className="prontuario--cadastrar__input"
+                                />
+                                <input
+                                    type="text"
+                                    value={this.state.cpf}
+                                    onChange={this.atualizaEstadoCpf.bind(this)}
+                                    placeholder="CPF"
+                                    className="prontuario--cadastrar__input"
+                                />
+                                <input
+                                    type="text"
+                                    value={this.state.endereco}
+                                    onChange={this.atualizaEstadoEndereco.bind(this)}
+                                    placeholder="Endereço"
+                                    className="prontuario--cadastrar__input"
+                                />
+                                <select
+                                    value={this.state.idUsuarioNavigation}
+                                    onChange={this.atualizaEstadoUsuario.bind(this)} required className="prontuario--cadastrar__select">
+                                    <option>Selecione o email do usuário</option>
+                                    {this.state.listaUsurios.map(element => {
+                                        return (
+                                            <option key={element.id} value={element.id}>
+                                                {element.email}
+                                            </option>
+                                        );
+                                    })}
+                                </select>
+                                
+                                </div>
+                                </div>
+                                <div className="prontuario--cadastrar__botao">
+
+                                    <button type="submit" onClick={this.CadastrarProntuario.bind(this)}>
+                                        Cadastrar
 </button>
+</div>
                 </form>
-                </div >
-            )
-    }
-}
+                            </div>
+                        </div >
+                        )
+                }
+            }
 export default CadastrarProntuario;

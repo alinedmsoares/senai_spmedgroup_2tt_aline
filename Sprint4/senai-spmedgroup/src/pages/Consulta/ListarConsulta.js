@@ -3,6 +3,8 @@ import Axios from "axios";
 import apiService from "../../services/apiService";
 import '../../assets/css/listar-consulta.css';
 import Menu from "../../components/Menu/Menu"
+import moment from 'moment'
+
 
 
 class ListarConsulta extends Component {
@@ -15,7 +17,7 @@ class ListarConsulta extends Component {
             idProntuarioNavigation: "",
             idMedicoNavigation: "",
             dataConsulta: "",
-            descricao:"",
+            descricao: "",
             idSituacaoNavigation: 1
         };
     }
@@ -90,6 +92,7 @@ class ListarConsulta extends Component {
             })
         console.log(consulta)
     }
+
     componentDidMount() {
         this.buscarConsultas();
         this.buscarMedicos();
@@ -97,45 +100,48 @@ class ListarConsulta extends Component {
     }
     render() {
         return (
-            <div className="consulta--listar">  
-            <div className="cadastrar--listar__menu">
-                <Menu/>
+            <div className="consulta--listar">
+                <div className="cadastrar--listar__menu">
+                    <Menu />
                 </div>
                 <h1 className="consulta--listar__titulo">Listar Consultas</h1>
                 <div className="consulta--listar__tabela">
-                <table className="consulta--listar__tabela-tabela">
-                    <thead className="consulta--listar__tabela-thead">
-                        <tr className="consulta--listar__tabela-tr">
-                            <th className="consulta--listar__tabela-th">#</th>
-                            <th className="consulta--listar__tabela-th">Paciente</th>
-                            <th className="consulta--listar__tabela-th">Médico</th>
-                            <th className="consulta--listar__tabela-th">Data da Consulta</th>
-                            <th className="consulta--listar__tabela-th">Descrição</th>
-                            <th className="consulta--listar__tabela-th">Situação</th>
-                        </tr>
-                    </thead>
+                    <table className="consulta--listar__tabela-tabela">
+                        <thead className="consulta--listar__tabela-thead">
+                            <tr className="consulta--listar__tabela-tr">
+                                <th className="consulta--listar__tabela-th">#</th>
+                                <th className="consulta--listar__tabela-th">Paciente</th>
+                                <th className="consulta--listar__tabela-th">Médico</th>
+                                <th className="consulta--listar__tabela-th">Data da Consulta</th>
+                                <th className="consulta--listar__tabela-th">Situação</th>
+                                <th className="consulta--listar__tabela-th">Descrição</th>
+                            </tr>
+                        </thead>
 
-                    <tbody className="consulta--listar__tabela-tbody">
-                        {
-                            this.state.listaConsultas.map(consulta => {
-                                return (
-                                    <tr className="consulta--listar__tabela-tr-dados" key={consulta.id}>
-                                        <td className="consulta--listar__tabela-td">{consulta.id}</td>
-                                        <td className="consulta--listar__tabela-td">{consulta.idProntuarioNavigation.nome}</td>
-                                        <td className="consulta--listar__tabela-td">{consulta.idMedicoNavigation.nome}</td>
-                                        <td className="consulta--listar__tabela-td">{consulta.dataConsulta}</td>
-                                        <td className="consulta--listar__tabela-td">{consulta.descricao}</td>
-                                        {/* <td>{consulta.idSituacaoNavigation.situacao1}</td> */}
-                                    </tr>
-                                );
+                        <tbody className="consulta--listar__tabela-tbody">
+                            {
+                                this.state.listaConsultas.map(consulta => {
+                                    return (
+                                        <tr className="consulta--listar__tabela-tr-dados" key={consulta.id}>
+                                            <td className="consulta--listar__tabela-td">{consulta.id}</td>
+                                            <td className="consulta--listar__tabela-td">{consulta.idProntuarioNavigation.nome}</td>
+                                            <td className="consulta--listar__tabela-td">{consulta.idMedicoNavigation.nome}</td>
+                                            <td className="consulta--listar__tabela-td">{moment(consulta.dataConsulta).format("DD/MM/YYYY - HH:mm")}</td>
+                                            <td className="consulta--listar__tabela-td">Situação</td>
+                                            <td className="consulta--listar__tabela-td">{consulta.descricao}</td>
+                                            {/* <td>{consulta.idSituacaoNavigation.situacao1}</td> */}
+                                        </tr>
+                                    );
 
-                            })
-                        }
-                    </tbody>
-                </table> 
+                                })
+                            }
+                        </tbody>
+                    </table>
                 </div>
-                </div >
-                )
+
+            </div >
+        )
+
     }
 }
 

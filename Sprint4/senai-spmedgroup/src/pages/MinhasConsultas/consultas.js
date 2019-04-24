@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Axios from "axios";
+import '../../assets/css/listar-consulta.css';
+import MenuPaciente from "../../components/Menu/MenuPaciente"
+import moment from 'moment'
 import apiService from "../../services/apiService";
 
 class ListarConsultaPaciente extends Component {
@@ -62,25 +65,32 @@ class ListarConsultaPaciente extends Component {
     }
     render() {
         return (
-            <div>  
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Nome do Médico</th>
-                            <th>Data da Consulta</th>
-                            <th>Situacao</th>
+            <div className="consulta--listar">
+            <div className="consulta--listar__menu">
+                <MenuPaciente/>
+                </div>  
+                <h1 className="consulta--listar__titulo">Listar Consultas</h1>
+                <div className="consulta--listar__tabela">
+
+                <table className="consulta--listar__tabela-tabela">
+                    <thead className="consulta--listar__tabela-thead">
+                        <tr className="consulta--listar__tabela-tr">
+                            <th className="consulta--listar__tabela-th">#</th>
+                            <th className="consulta--listar__tabela-th">Nome do Médico</th>
+                            <th className="consulta--listar__tabela-th">Data da Consulta</th>
+                            <th className="consulta--listar__tabela-th">Situacao</th>
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody className="consulta--listar__tabela-tbody">
                         {
                             this.state.listaConsultas.map(consulta => {
                                 return (
-                                    <tr key={consulta.id}>
-                                        <td>{consulta.id}</td>
-                                        <td>{consulta.idMedicoNavigation.nome}</td>
-                                        <td>{consulta.dataConsulta}</td>
+                                    <tr className="consulta--listar__tabela-tr-dados" key={consulta.id}>
+                                        <td className="consulta--listar__tabela-td">{consulta.id}</td>
+                                        <td className="consulta--listar__tabela-td">{consulta.idMedicoNavigation.nome}</td>
+                                        <td className="consulta--listar__tabela-td">{moment(consulta.dataConsulta).format("DD/MM/YYYY - HH:mm")}</td>
+                                        <td className="consulta--listar__tabela-td">Situação</td> 
                                         {/* <td>{consulta.idSituacaoNavigation.situacao1}</td> */}
                                     </tr>
                                 );
@@ -89,6 +99,7 @@ class ListarConsultaPaciente extends Component {
                         }
                     </tbody>
                 </table> 
+                </div>
                 </div >
                 )
     }

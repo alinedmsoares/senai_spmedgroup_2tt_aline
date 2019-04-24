@@ -3,12 +3,12 @@ import logoMenu from "../../assets/img/icon.png"
 import "../../assets/css/menu.css"
 
 function Menu() {
-    
+
     return (
         <div>
             <div className="nav-side-menu">
                 <div className="menu--logo">
-            <img src={logoMenu} className="menu--logo__img"/>
+                    <img src={logoMenu} className="menu--logo__img" />
                 </div>
                 <i className="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
@@ -20,7 +20,9 @@ function Menu() {
                             <a href="#"><i className="fas fa-user"></i> Usuários <span className="arrow"></span></a>
                         </li>
                         <ul className="sub-menu collapse" id="products">
-                            <li><a href="#">Cadastrar</a></li>
+                            <li><a href="#">Cadastrar</a>
+
+                            </li>
                             <li><a href="localhost:3000/usuarios/cadastrarusuarios">Listar</a></li>
                         </ul>
 
@@ -38,20 +40,20 @@ function Menu() {
                             <a href="#"><i className="fas fa-file-medical-alt"></i> Prontuários <span className="arrow"></span></a>
                         </li>
                         <ul className="sub-menu collapse" id="new">
-                        <li><a href="#">Cadastrar</a></li>
-                    <li><a href="#">Listar</a></li>
+                            <li><a href="#">Cadastrar</a></li>
+                            <li><a href="#">Listar</a></li>
                         </ul>
 
 
                         <li>
                             <a href="#">
-                            <i className="fas fa-user-md"></i> Médicos
+                                <i className="fas fa-user-md"></i> Médicos
                   </a>
                         </li>
 
                         <li>
                             <a href="#">
-                            <i className="fas fa-hospital"></i> Clínica
+                                <i className="fas fa-hospital"></i> Clínica
                   </a>
                         </li>
                     </ul>

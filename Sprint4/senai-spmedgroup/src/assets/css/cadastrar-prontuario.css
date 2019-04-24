@@ -1,0 +1,84 @@
+.prontuario--cadastrar{
+    height: 100vh;
+    background-color: #E6E6E6;
+  }
+  .prontuario--cadastrar__form{
+    height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+  }
+  .prontuario--cadastrar__titulo{
+    font-family: "Roboto Light";
+    font-size: 2em;
+    color: #83BEDF;
+    margin: 0% 10% 0% 0%;
+  }
+  .prontuario--cadastrar__select{
+    background-color: #E6E6E6;
+    font-size: 1.3em;
+    color: #AFAFAF;
+    font-family: "Roboto Light";
+    border-bottom: solid 1px #AFAFAF;
+  }
+  .prontuario--cadastrar__formulario{
+    width: 20%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .prontuario--cadastrar__formulario_1{
+    height: 50vh;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 10% 0% 0% 0%;
+    justify-content: space-evenly
+  }
+  .prontuario--cadastrar__formulario_2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 78vh;
+  }
+  .prontuario--cadastrar__formulario_form{
+    width: 80%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .prontuario--cadastrar__input{
+    background-color: #E6E6E6;
+    font-size: 1.3em;
+    color: #AFAFAF;
+    font-family: "Roboto Light";
+    border-bottom: solid 1px #AFAFAF;
+  }
+  .prontuario--cadastrar__formulario_all{
+    width: 80%;
+    height: 30vh;
+    display: flex;
+  }
+  .prontuario--cadastrar__botao button{
+    width: 50%;
+    color: white;
+    height: 5vh;
+    background-image: linear-gradient(36deg, #A4ECFF, #9CE1F8, #6B9CCE, #192A87);
+    border-radius: 10px;
+    font-family: "Microsoft Yi Baiti";
+    font-size: 2em;
+    box-shadow: 3px 3px 9px rgb(0, 0, 0, 40%);
+    font-weight: 500;
+  
+  }
+  .prontuario--cadastrar__botao{
+    width: 40%;
+    height: 6vh;
+    display: flex;
+    justify-content: flex-end;
+  }
+  

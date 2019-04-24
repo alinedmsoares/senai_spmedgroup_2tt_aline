@@ -5,7 +5,11 @@
     font-family: "Roboto Light";
     font-size: 2em;
     color: #83BEDF;
-    margin: 0% 10% 0% 0%;
+    margin: 0% 0% 0% 21%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 5%;
   }
   .consulta--listar__tabela{
     width: 100%;
@@ -18,6 +22,7 @@
   .consulta--listar__tabela-th{
       font-family: "Berlin Sans FB";
       color: #CCCCCC;
+    font-size: 1.3em;
   }
   .consulta--listar__tabela-tabela{
     width: 100%;
@@ -28,15 +33,17 @@
     align-items: center;
   }
   .consulta--listar__tabela-thead{
-      width: 100%;
-      display: flex;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
   .consulta--listar__tabela-tr{
     display: flex;
     width: 80%;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 1%;
+    justify-content: space-around;
+    margin-bottom: 2%;
 }
 .consulta--listar__tabela-tr-dados{
     display: flex;
@@ -54,10 +61,13 @@
 }
 .consulta--listar__tabela-td{
     
-    height: 2vh;
-    width: 80%;
-    font-family: "Berlin Sans FB";
-    color: #999999;
+  height: 3vh;
+  width: 81%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: "Berlin Sans FB";
+  color: #999999;
     
 }
 .consulta--listar__tabela-tbody{
@@ -65,5 +75,11 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+.consulta--listar__botao{
+  background-color: cornflowerblue;
+  color: white;
+  padding: 2%;
+  border-radius: 5px;
 }
     
