@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './pages/Login/App';
 import CadastrarConsulta from './pages/Consulta/CadastrarConsulta'
+import NaoEncontrado from './pages/NaoEncontrado/naoencontrado'
 import ListarConsulta from './pages/Consulta/ListarConsulta'
-import CadastrarUsuarios from './pages/Usuarios/CadastrarUsuarios'
 import ListarUsuarios from './pages/Usuarios/ListarUsuarios'
-import CadastrarProntuario from './pages/Prontuario/CadastrarProntuario'
+import ListarMedicos from './pages/Medicos/ListarMedicos'
 import ListarConsultaPaciente from './pages/MinhasConsultas/consultas'
 import ListarConsultaMedico from './pages/ConsultasAgendadas/consultas'
 import ListarProntuario from './pages/Prontuario/ListarProntuario'
@@ -55,14 +55,14 @@ const rotas = (
         <div>
             <Switch>
                 <Route exact path="/" component={App} />
-                <PermissaoAdmin path="/Consulta/CadastrarConsulta" component={CadastrarConsulta} />
-                <PermissaoAdmin path="/Consulta/ListarConsulta" component={ListarConsulta} />
-                <PermissaoAdmin path="/Prontuario/CadastrarProntuario" component={CadastrarProntuario} />
-                <PermissaoAdmin path="/Prontuario/ListarProntuario" component={ListarProntuario} />
-                <PermissaoAdmin path="/Usuarios/CadastrarUsuarios" component={CadastrarUsuarios} />
-                <PermissaoAdmin path="/Usuarios/ListarUsuarios" component={ListarUsuarios} />
-                <PermissaoPaciente path="/MinhasConsultas/consultas" component={ListarConsultaPaciente} />
-                <PermissaoMedico path="/ConsultasAgendadas/consultas" component={ListarConsultaMedico} />
+                <PermissaoAdmin path="/Consulta/cadastrar" component={CadastrarConsulta} />
+                <PermissaoAdmin path="/Consulta/listar" component={ListarConsulta} />
+                <PermissaoAdmin path="/Prontuario/listar" component={ListarProntuario} />
+                <PermissaoAdmin path="/Usuarios/listar" component={ListarUsuarios} />
+                <PermissaoAdmin path="/Medicos/listar" component={ListarMedicos} />
+                <PermissaoPaciente path="/Consulta/minhas" component={ListarConsultaPaciente} />
+                <PermissaoMedico path="/consulta/agendadas" component={ListarConsultaMedico} />
+                <Route component={NaoEncontrado} />
             </Switch>
         </div>
     </Router>

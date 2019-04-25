@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Axios from "axios";
 import apiService from "../../services/apiService";
+import '../../assets/css/listar-prontuario.css';
+import Menu from "../../components/Menu/Menu"
+import moment from 'moment'
 
 class ListarProntuario extends Component {
     constructor() {
@@ -91,34 +94,39 @@ class ListarProntuario extends Component {
     }
     render() {
         return (
-                <div>
-                <table>
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Nome do Paciente</th>
-                    <th>Data de Nascimento</th>
-                    <th>Usuário</th>
-                    <th>Telefone</th>
-                    <th>RG</th>
-                    <th>CPF</th>
-                    <th>Endereço</th>
+                <div className="prontuario--listar">
+                <div className="cadastrar--listar__menu">
+                    <Menu />
+                </div>
+                <h1 className="prontuario--listar__titulo">Listar Prontuários</h1>
+                <div className="prontuario--listar__tabela">
+                <table className="prontuario--listar__tabela-tabela">
+                <thead className="prontuario--listar__tabela-thead">
+                  <tr className="prontuario--listar__tabela-tr">
+                    <th className="prontuario--listar__tabela-th">#</th>
+                    <th className="prontuario--listar__tabela-th">Nome do Paciente</th>
+                    <th className="prontuario--listar__tabela-th">Data de Nascimento</th>
+                    <th className="prontuario--listar__tabela-th">Usuário</th>
+                    <th className="prontuario--listar__tabela-th">Telefone</th>
+                    <th className="prontuario--listar__tabela-th">RG</th>
+                    <th className="prontuario--listar__tabela-th">CPF</th>
+                    <th className="prontuario--listar__tabela-th">Endereço</th>
                   </tr>
                 </thead>
 
-                <tbody>
+                <tbody className="prontuario--listar__tabela-tbody">
                   {
                       this.state.listaProntuarios.map(prontuario => {
                       return(
-                        <tr key={prontuario.id}>
-                          <td>{prontuario.id}</td>
-                          <td>{prontuario.nome}</td>
-                          <td>{prontuario.dataDeNascimento}</td>
-                          <td>{prontuario.idUsuarioNavigation.email}</td>
-                          <td>{prontuario.telefone}</td>
-                          <td>{prontuario.rg}</td>
-                          <td>{prontuario.cpf}</td>
-                          <td>{prontuario.endereco}</td>
+                        <tr className="prontuario--listar__tabela-tr-dados" key={prontuario.id}>
+                          <td className="prontuario--listar__tabela-td">{prontuario.id}</td>
+                          <td className="prontuario--listar__tabela-td">{prontuario.nome}</td>
+                          <td className="prontuario--listar__tabela-td">{moment(prontuario.dataDeNascimento).format("DD/MM/YYYY")}</td>
+                          <td className="prontuario--listar__tabela-td">{prontuario.idUsuarioNavigation.email}</td>
+                          <td className="prontuario--listar__tabela-td">{prontuario.telefone}</td>
+                          <td className="prontuario--listar__tabela-td">{prontuario.rg}</td>
+                          <td className="prontuario--listar__tabela-td">{prontuario.cpf}</td>
+                          <td className="prontuario--listar__tabela-td">{prontuario.endereco}</td>
 
                         </tr>
                       );
@@ -129,6 +137,7 @@ class ListarProntuario extends Component {
               </table> 
 
                 </div >
+                </div>
             )
     }
 }

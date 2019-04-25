@@ -1,5 +1,6 @@
 import React from 'react'
 import logoMenu from "../../assets/img/icon.png"
+import {Link} from 'react-router-dom'
 import "../../assets/css/menu.css"
 
 function Menu() {
@@ -16,39 +17,30 @@ function Menu() {
 
                     <ul id="menu-content" className="menu-content collapse out">
 
-                        <li data-toggle="collapse" data-target="#products" className="collapsed active">
-                            <a href="#"><i className="fas fa-user"></i> Usuários <span className="arrow"></span></a>
-                        </li>
-                        <ul className="sub-menu collapse" id="products">
-                            <li><a href="#">Cadastrar</a>
-
-                            </li>
-                            <li><a href="localhost:3000/usuarios/cadastrarusuarios">Listar</a></li>
-                        </ul>
 
 
                         <li data-toggle="collapse" data-target="#service" className="collapsed">
                             <a href="#"><i className="fas fa-stethoscope"></i> Consultas <span className="arrow"></span></a>
                         </li>
                         <ul className="sub-menu collapse" id="service">
-                            <li><a href="#">Cadastrar</a></li>
-                            <li><a href="#">Listar</a></li>
+                            <li><Link to ="/consulta/cadastrar">Cadastrar</Link></li>
+                            <li><Link to ="/consulta/listar">Listar</Link></li>
                         </ul>
+
+                        <li data-toggle="collapse" data-target="#products" className="collapsed active">
+                            <Link to ="/usuarios/listar"><i className="fas fa-user"></i> Usuários </Link>
+                        </li>
 
 
                         <li data-toggle="collapse" data-target="#new" className="collapsed">
-                            <a href="#"><i className="fas fa-file-medical-alt"></i> Prontuários <span className="arrow"></span></a>
+                            <Link to ="/prontuario/listar"><i className="fas fa-file-medical-alt"></i> Prontuários</Link>
                         </li>
-                        <ul className="sub-menu collapse" id="new">
-                            <li><a href="#">Cadastrar</a></li>
-                            <li><a href="#">Listar</a></li>
-                        </ul>
 
 
                         <li>
-                            <a href="#">
+                            <Link to ="/medicos/listar">
                                 <i className="fas fa-user-md"></i> Médicos
-                  </a>
+                  </Link>
                         </li>
 
                         <li>

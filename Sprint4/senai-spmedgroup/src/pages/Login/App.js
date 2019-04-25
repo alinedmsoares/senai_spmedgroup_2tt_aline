@@ -40,13 +40,13 @@ class App extends Component {
           localStorage.setItem("usuario-spmedgroup", data.data.token);
           console.log(parseJwt().Role);
           if (parseJwt().Role === "Administrador") {
-            this.props.history.push("/consulta/cadastrarconsulta")
+            this.props.history.push("/consulta/listar")
           }
           else if (parseJwt().Role === "Paciente") {
-            this.props.history.push("/MinhasConsultas/consultas")
+            this.props.history.push("/consulta/minhas")
           }
           else {
-            this.props.history.push("/ConsultasAgendadas/consultas")
+            this.props.history.push("/consulta/agendadas")
           }
         }
       })

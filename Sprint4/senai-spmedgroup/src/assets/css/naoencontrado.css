@@ -1,0 +1,13 @@
+.body{
+    background-image: linear-gradient(186deg, #B9DDF2, #3ACDF3, #3D4FF9, #152CF6);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.naoencontrado-h1{
+    font-family: "Berlin Sans FB";
+    font-size: 3em;
+    color: white;
+}

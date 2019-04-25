@@ -1,4 +1,5 @@
-﻿using Senai.SpMedGroup.WebApi.Aline.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.SpMedGroup.WebApi.Aline.Domains;
 using Senai.SpMedGroup.WebApi.Aline.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -40,7 +41,7 @@ namespace Senai.SpMedGroup.WebApi.Aline.Repositories
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                return ctx.Medicos.ToList();
+                return ctx.Medicos.Include(x => x.IdClinicaNavigation).Include(x => x.IdUsuarioNavigation).ToList();
             }
         }
     }

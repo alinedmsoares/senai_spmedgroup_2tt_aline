@@ -39,11 +39,14 @@ class ListarConsultaMedico extends Component {
     CadastrarDescricao(event) {
         event.preventDefault();
 
+        let idConsulta = idConsulta.target.getAttribute()
+
         let consulta = {
-            descricao: this.state.descricao,
+
+            descricao: this.state.descricao
         }
         let jwt = localStorage.getItem('usuario-spmedgroup');
-        Axios.put(`http://localhost:5000/api/consultas`, consulta, {
+        Axios.put(`http://localhost:5000/api/consultas/descricao/` + idConsulta, consulta, {
             headers: {
                 "authorization": 'Bearer ' + jwt
             }
@@ -95,7 +98,7 @@ class ListarConsultaMedico extends Component {
                                                     onChange={this.atualizaEstadoDescricao.bind(this)}
                                                     placeholder="Insira uma descricão"
                                                 />
-                                                <button type="submit" onClick={this.CadastrarDescricao.bind(this)} className="consulta--listar__botao">
+                                                <button type="submit" data-idConsulta={consulta.id} onClick={this.CadastrarDescricao.bind(this)} className="consulta--listar__botao">
                                                     Cadastrar
 </button>
                                             </form>
