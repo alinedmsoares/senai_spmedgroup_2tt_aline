@@ -62,7 +62,17 @@ namespace Senai.SpMedGroup.WebApi.Aline.Repositories
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                return ctx.Consulta.Include(x => x.IdProntuarioNavigation).Include(x => x.IdMedicoNavigation).ToList();
+                List<Consulta> listaConsultas = ctx.Consulta.Include(x => x.IdProntuarioNavigation).Include(x => x.IdMedicoNavigation).Include(x => x.IdSituacaoNavigation).ToList();
+                
+
+                foreach (var item in listaConsultas)
+                {
+                    item.IdMedicoNavigation.Consulta = null;
+                    item.IdProntuarioNavigation.Consulta = null;
+                    item.IdSituacaoNavigation.Consulta = null;
+                }
+
+                return listaConsultas;
             }
         }
 
@@ -76,7 +86,15 @@ namespace Senai.SpMedGroup.WebApi.Aline.Repositories
             }
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                return ctx.Consulta.Include(x => x.IdMedicoNavigation).Include(x => x.IdProntuarioNavigation).Where(x => x.IdMedico == medico.Id).ToList();
+                List<Consulta> listaConsultaMedico = ctx.Consulta.Include(x => x.IdMedicoNavigation).Include(x => x.IdProntuarioNavigation).Include(x => x.IdSituacaoNavigation).Where(x => x.IdMedico == medico.Id).ToList();
+
+                foreach (var item in listaConsultaMedico)
+                {
+                    item.IdProntuarioNavigation.Consulta = null;
+                    item.IdSituacaoNavigation.Consulta = null;
+                }
+
+                return listaConsultaMedico;
             }
         }
 
@@ -90,7 +108,16 @@ namespace Senai.SpMedGroup.WebApi.Aline.Repositories
             }
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                return ctx.Consulta.Include(x => x.IdProntuarioNavigation).Include(x => x.IdMedicoNavigation).Where(x => x.IdProntuario == paciente.Id).ToList();
+                List<Consulta> listaConsultaPaciente = ctx.Consulta.Include(x => x.IdProntuarioNavigation).Include(x => x.IdMedicoNavigation).Include(x => x.IdSituacaoNavigation).Where(x => x.IdProntuario == paciente.Id).ToList();
+
+                foreach (var item in listaConsultaPaciente)
+                {
+                    item.IdMedicoNavigation.Consulta = null;
+                    item.IdSituacaoNavigation.Consulta = null;
+                }
+
+                return listaConsultaPaciente;
+
             }
         }
     }

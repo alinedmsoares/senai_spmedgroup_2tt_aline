@@ -90,7 +90,7 @@ class ListarConsultaPaciente extends Component {
                                         <td className="consulta--listar__tabela-td">{consulta.id}</td>
                                         <td className="consulta--listar__tabela-td">{consulta.idMedicoNavigation.nome}</td>
                                         <td className="consulta--listar__tabela-td">{moment(consulta.dataConsulta).format("DD/MM/YYYY - HH:mm")}</td>
-                                        <td className="consulta--listar__tabela-td">Situação</td> 
+                                        <td className="consulta--listar__tabela-td">{consulta.idSituacaoNavigation.situacao1}</td> 
                                         {/* <td>{consulta.idSituacaoNavigation.situacao1}</td> */}
                                     </tr>
                                 );

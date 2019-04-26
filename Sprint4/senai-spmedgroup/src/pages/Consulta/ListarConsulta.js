@@ -18,7 +18,7 @@ class ListarConsulta extends Component {
             idMedicoNavigation: "",
             dataConsulta: "",
             descricao: "",
-            idSituacaoNavigation: 1
+            idSituacaoNavigation: ""
         };
     }
     buscarConsultas() {
@@ -127,7 +127,7 @@ class ListarConsulta extends Component {
                                             <td className="consulta--listar__tabela-td">{consulta.idProntuarioNavigation.nome}</td>
                                             <td className="consulta--listar__tabela-td">{consulta.idMedicoNavigation.nome}</td>
                                             <td className="consulta--listar__tabela-td">{moment(consulta.dataConsulta).format("DD/MM/YYYY - HH:mm")}</td>
-                                            <td className="consulta--listar__tabela-td">Situação</td>
+                                            <td className="consulta--listar__tabela-td">{consulta.idSituacaoNavigation.situacao1}</td>
                                             <td className="consulta--listar__tabela-td">{consulta.descricao}</td>
                                             {/* <td>{consulta.idSituacaoNavigation.situacao1}</td> */}
                                         </tr>

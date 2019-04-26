@@ -15,7 +15,7 @@ class CadastrarConsulta extends Component {
             idProntuarioNavigation: "",
             idMedicoNavigation: "",
             dataConsulta: "",
-            idSituacaoNavigation: 1
+            idSituacaoNavigation: 3
         };
     }
     buscarConsultas() {
@@ -73,7 +73,7 @@ class CadastrarConsulta extends Component {
             IdProntuario: this.state.idProntuarioNavigation,
             IdMedico: this.state.idMedicoNavigation,
             dataConsulta: this.state.dataConsulta,
-            IdSituacao: 1
+            IdSituacao: 3
         }
         let jwt = localStorage.getItem('usuario-spmedgroup');
         Axios.post(`http://localhost:5000/api/consultas`, consulta, {
@@ -86,6 +86,7 @@ class CadastrarConsulta extends Component {
             })
         console.log(consulta)
     }
+    
     componentDidMount() {
         this.buscarConsultas();
         this.buscarMedicos();
@@ -104,8 +105,10 @@ class CadastrarConsulta extends Component {
             <div className="consulta--cadastrar__formulario_all">
             <div className="consulta--cadastrar__formulario_form">
                     <select
+                    required
                     value={this.state.idMedicoNavigation}
                         onChange={this.atualizaEstadoMedico.bind(this)} required className="consulta--cadastrar__select">
+                    
                     <option>Selecione o médico</option>
                     {this.state.listaMedicos.map(element => {
                         return (
@@ -116,7 +119,8 @@ class CadastrarConsulta extends Component {
                     })}
                     </select>
                 <input
-                    type="date"
+                    type="datetime-local"
+                    required
                     value={this.state.dataConsulta}
                     onChange={this.atualizaEstadoData.bind(this)}
                     placeholder="Data da Consulta"
@@ -125,6 +129,7 @@ class CadastrarConsulta extends Component {
                 </div>
                 <div className="consulta--cadastrar__select_prontuario">
                 <select
+                required
                     value={this.state.idProntuarioNavigation}
                     onChange={this.atualizaEstadoProntuario.bind(this)} required className="consulta--cadastrar__select">
                 <option>Selecione o paciente</option>
@@ -147,6 +152,7 @@ class CadastrarConsulta extends Component {
                 </form >
                 </div>
                 </div >
+                
                 )
     }
 }
