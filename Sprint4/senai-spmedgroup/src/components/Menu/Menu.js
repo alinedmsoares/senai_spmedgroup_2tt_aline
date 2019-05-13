@@ -44,9 +44,9 @@ function Menu() {
                         </li>
 
                         <li>
-                            <a href="#">
-                                <i className="fas fa-hospital"></i> Clínica
-                  </a>
+                            <Link to ="/clinica/listar">
+                            <i className="fas fa-hospital"></i> Clínica
+                  </Link>
                         </li>
                     </ul>
                 </div>

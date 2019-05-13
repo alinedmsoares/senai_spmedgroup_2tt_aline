@@ -78,7 +78,7 @@ class ListarConsultaPaciente extends Component {
                             <th className="consulta--listar__tabela-th">#</th>
                             <th className="consulta--listar__tabela-th">Nome do Médico</th>
                             <th className="consulta--listar__tabela-th">Data da Consulta</th>
-                            <th className="consulta--listar__tabela-th">Situacao</th>
+                            <th className="consulta--listar__tabela-th">Situação</th>
                         </tr>
                     </thead>
 
@@ -91,7 +91,6 @@ class ListarConsultaPaciente extends Component {
                                         <td className="consulta--listar__tabela-td">{consulta.idMedicoNavigation.nome}</td>
                                         <td className="consulta--listar__tabela-td">{moment(consulta.dataConsulta).format("DD/MM/YYYY - HH:mm")}</td>
                                         <td className="consulta--listar__tabela-td">{consulta.idSituacaoNavigation.situacao1}</td> 
-                                        {/* <td>{consulta.idSituacaoNavigation.situacao1}</td> */}
                                     </tr>
                                 );
 

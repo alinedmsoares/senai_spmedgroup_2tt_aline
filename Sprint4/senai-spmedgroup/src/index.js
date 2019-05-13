@@ -7,6 +7,7 @@ import NaoEncontrado from './pages/NaoEncontrado/naoencontrado'
 import ListarConsulta from './pages/Consulta/ListarConsulta'
 import ListarUsuarios from './pages/Usuarios/ListarUsuarios'
 import ListarMedicos from './pages/Medicos/ListarMedicos'
+import ListarClinica from './pages/Clinica/ListarClinica'
 import ListarConsultaPaciente from './pages/MinhasConsultas/consultas'
 import ListarConsultaMedico from './pages/ConsultasAgendadas/consultas'
 import ListarProntuario from './pages/Prontuario/ListarProntuario'
@@ -62,6 +63,7 @@ const rotas = (
                 <PermissaoAdmin path="/Medicos/listar" component={ListarMedicos} />
                 <PermissaoPaciente path="/Consulta/minhas" component={ListarConsultaPaciente} />
                 <PermissaoMedico path="/consulta/agendadas" component={ListarConsultaMedico} />
+                <PermissaoAdmin path="/Clinica/listar" component={ListarClinica}/>
                 <Route component={NaoEncontrado} />
             </Switch>
         </div>

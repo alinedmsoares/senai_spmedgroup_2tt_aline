@@ -1,0 +1,85 @@
+.clinica--listar{
+  background-color: #E6E6E6;
+}
+.clinica--listar__titulo{
+  font-family: "Roboto Light";
+  font-size: 2em;
+  color: #83BEDF;
+  margin: 0% 0% 0% 21%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  padding: 5%;
+}
+.clinica--listar__tabela{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+.clinica--listar__tabela-th{
+    font-family: "Berlin Sans FB";
+    color: #CCCCCC;
+  font-size: 1em;
+}
+.clinica--listar__tabela-tabela{
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.clinica--listar__tabela-thead{
+  width: 86%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.clinica--listar__tabela-tr{
+  display: flex;
+  width: 78%;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 2%;
+}
+.clinica--listar__tabela-tr-dados{
+  display: flex;
+  width: 80%;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-bottom: 1%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 3px 0px 8px rgb(0, 0, 0, 40%);
+
+  padding: 1%;
+}
+.clinica--listar__tabela-td{
+  
+height: 5vh;
+width: 79%;
+justify-content: center;
+display: flex;
+align-items: center;
+font-family: "Berlin Sans FB";
+color: #999999;
+  
+}
+.clinica--listar__tabela-tbody{
+  width: 79%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.clinica--listar__botao{
+background-color: cornflowerblue;
+color: white;
+padding: 2%;
+border-radius: 5px;
+}
+  

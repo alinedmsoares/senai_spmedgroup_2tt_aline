@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import apiService from "../../services/apiService";
-// import '../../assets/css/listar-medicos.css';
+//import '../../assets/css/listar-medicos.css';
 import Menu from "../../components/Menu/Menu"
 import moment from 'moment'
 
@@ -15,8 +15,8 @@ class ListarMedicos extends Component {
             listaClinica:[],
             nome: " ",
             crm: " ",
-            IdClinicaNavigation: "",
-            IdUsuarioNavigation: ""
+            idClinicaNavigation: "",
+            idUsuarioNavigation: ""
         };
     }
     buscarMedicos() {
@@ -64,10 +64,10 @@ class ListarMedicos extends Component {
         this.setState({ crm: event.target.value });
     }
     atualizarEstadoUsuario(event) {
-        this.setState({ IdUsuarioNavigation: event.target.value });
+        this.setState({ idUsuarioNavigation: event.target.value });
     }
     atualizarEstadoClinica(event) {
-        this.setState({ IdClinicaNavigation: event.target.value });
+        this.setState({ idClinicaNavigation: event.target.value });
     }
     componentDidMount() {
         this.buscarClinica();
@@ -80,7 +80,7 @@ class ListarMedicos extends Component {
                 <div className="cadastrar--listar__menu">
                     <Menu />
                 </div>
-                <h1 className="usuario--listar__titulo">Listar Usuários</h1>
+                <h1 className="usuario--listar__titulo">Listar Médicos</h1>
 
                 <div className="usuario--listar__tabela">
                     <table className="usuario--listar__tabela-tabela">
@@ -103,8 +103,8 @@ class ListarMedicos extends Component {
                                             <td className="usuario--listar__tabela-td">{element.id}</td>
                                             <td className="usuario--listar__tabela-td">{element.nome}</td>
                                             <td className="usuario--listar__tabela-td">{element.crm}</td>
-                                            {/* <td className="usuario--listar__tabela-td">{element.IdClinicaNavigation.nomefantasia}</td> */}
-                                            {/* <td className="usuario--listar__tabela-td">{element.IdUsuarioNavigation.email}</td> */}
+                                            <td className="usuario--listar__tabela-td">{element.idUsuarioNavigation.email}</td>
+                                            <td className="usuario--listar__tabela-td">{element.idClinicaNavigation.nomeFantasia}</td> 
 
                                         </tr>
                                     );

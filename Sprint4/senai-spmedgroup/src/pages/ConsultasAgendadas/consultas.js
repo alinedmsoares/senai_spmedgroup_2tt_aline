@@ -75,7 +75,7 @@ class ListarConsultaMedico extends Component {
                             <th className="consulta--listar__tabela-th">#</th>
                             <th className="consulta--listar__tabela-th">Nome do Paciente</th>
                             <th className="consulta--listar__tabela-th">Data da Consulta</th>
-                            <th className="consulta--listar__tabela-th">Situacao</th>
+                            <th className="consulta--listar__tabela-th">Situação</th>
                             <th className="consulta--listar__tabela-th">Descrição</th>
                         </tr>
                     </thead>
@@ -89,7 +89,6 @@ class ListarConsultaMedico extends Component {
                                         <td className="consulta--listar__tabela-td">{consulta.idProntuarioNavigation.nome}</td>
                                         <td className="consulta--listar__tabela-td">{moment(consulta.dataConsulta).format("DD/MM/YYYY - HH:mm")}</td>
                                         <td className="consulta--listar__tabela-td">{consulta.idSituacaoNavigation.situacao1}</td>
-                                        {/* <td>{consulta.idSituacaoNavigation.situacao1}</td> */}
                                         <td className="consulta--listar__tabela-td">
                                             <form className="consulta--listar__tabela-td" onSubmit={this.CadastrarDescricao.bind(this)} noValidate>
                                                 <input
