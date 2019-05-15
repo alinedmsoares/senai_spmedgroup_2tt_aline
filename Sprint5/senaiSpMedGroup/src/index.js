@@ -5,36 +5,30 @@ import {
     createSwitchNavigator
 } from "react-navigation";
 
-import App from '../App'
+import pacienteConsulta from '../src/pages/pacienteConsulta'
+import medicoConsulta from '../src/pages/medicoConsulta'
 import Login from "../src/pages/login"
 
 const AuthStack = createStackNavigator({Login});
 
-const ConsultasNavigator = createBottomTabNavigator(
+const ConsultasPacienteNavigator = createBottomTabNavigator(
     {
-        App
+        pacienteConsulta
     },
+
+);
+const ConsultasMedicoNavigator = createBottomTabNavigator(
     {
-        initialRouteName: "App",
-        swipeEnabled: true,
-        tabBarOptions:{
-            showLabel:false,
-            showIcon:true,
-            inactiveBackgroundColor: "#dd99ff",
-            activeBackgroundColor: "#1D0E3F",
-            activeTintColor: "#FFFFFF",
-            inactiveTintColor: "#FFFFFF",
-            style: {
-                height: 50
-            }
-        }
-    }
+        medicoConsulta
+    },
+
 );
 
 export default createAppContainer(
     createSwitchNavigator(
         {
-            ConsultasNavigator,
+            ConsultasPacienteNavigator,
+            ConsultasMedicoNavigator,
             AuthStack
         },
         {
