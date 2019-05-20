@@ -72,6 +72,7 @@ class ListarConsulta extends Component {
     atualizaEstadoDescricao(event) {
         this.setState({ descricao: event.target.value })
     }
+
     CadastrarConsulta(event) {
         event.preventDefault();
 
@@ -90,7 +91,6 @@ class ListarConsulta extends Component {
             .then(res => {
                 this.buscarConsultas()
             })
-        console.log(consulta)
     }
 
     componentDidMount() {

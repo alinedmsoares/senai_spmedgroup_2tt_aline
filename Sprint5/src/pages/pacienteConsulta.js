@@ -28,14 +28,6 @@ class pacienteConsulta extends Component {
     this.carregaToken();
   };
 
-  _userLogout = async () => {
-    try {
-      await AsyncStorage.removeItem("userToken");
-      AlertIOS.alert("Logout Success!")
-    } catch (error) {
-      console.log('AsyncStorage error: ' + error.message);
-    }
-  }
 
   carregaToken = async () => {
     await AsyncStorage.getItem("userToken").then((token) => {
