@@ -10,6 +10,15 @@
     align-items: center;
     justify-content: space-around;
 }
+.consulta--cadastrar__form_all{
+  margin-left: 20%;
+  height: 35vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
 .consulta--cadastrar__titulo{
   font-family: "Roboto Light";
   font-size: 2em;
@@ -17,11 +26,14 @@
   margin: 0% 10% 0% 0%;
 }
 .consulta--cadastrar__select{
-  background-color: #E6E6E6;
+  background-color: rgb(255, 255, 255);
   font-size: 1.3em;
   color: #AFAFAF;
   font-family: "Roboto Light";
-  border-bottom: solid 1px #AFAFAF;
+  width: 60%;
+  height: 7vh;
+  box-shadow: 3px 0px 8px rgb(0, 0, 0, 40%);
+  border-radius: 10px;
 }
 .consulta--cadastrar__formulario{
   width: 80%;
@@ -29,6 +41,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 .consulta--cadastrar__formulario_form{
   width: 80%;
@@ -36,14 +49,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 .consulta--cadastrar__input{
-  background-color: #E6E6E6;
+  background-color: rgb(255, 255, 255);
   font-size: 1.3em;
   color: #AFAFAF;
   font-family: "Roboto Light";
-  margin: 15% 0% 0% 2%;
-  border-bottom: solid 1px #AFAFAF;
+  width: 60%;
+  height: 7vh;
+  box-shadow: 3px 0px 8px rgb(0, 0, 0, 40%);
+  border-radius: 10px;
 }
 .consulta--cadastrar__formulario_all{
   width: 80%;

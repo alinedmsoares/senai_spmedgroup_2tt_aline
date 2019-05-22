@@ -48,9 +48,7 @@
 .clinica--listar__tabela-tr-dados{
   display: flex;
   width: 80%;
-  -webkit-align-items: center;
   align-items: center;
-  -webkit-justify-content: center;
   justify-content: center;
   margin-bottom: 1%;
   background-color: white;

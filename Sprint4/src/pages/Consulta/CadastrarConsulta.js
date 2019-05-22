@@ -102,8 +102,8 @@ class CadastrarConsulta extends Component {
                 <h1 className="consulta--cadastrar__titulo">Cadastrar Consulta</h1>
 
             <form onSubmit={this.CadastrarConsulta.bind(this)} noValidate className="consulta--cadastrar__formulario">
-            <div className="consulta--cadastrar__formulario_all">
-            <div className="consulta--cadastrar__formulario_form">
+            <div className="consulta--cadastrar__form_all">
+
                     <select
                     required
                     value={this.state.idMedicoNavigation}
@@ -126,8 +126,6 @@ class CadastrarConsulta extends Component {
                     placeholder="Data da Consulta"
                     className="consulta--cadastrar__input"
                 />
-                </div>
-                <div className="consulta--cadastrar__select_prontuario">
                 <select
                 required
                     value={this.state.idProntuarioNavigation}
@@ -140,9 +138,8 @@ class CadastrarConsulta extends Component {
                         </option>
                     );
                 })}
-                </select>
-                </div>
-                </div>
+                </select> 
+                </div>           
                 <div className="consulta--cadastrar__botao">
             <button onClick={this.CadastrarConsulta.bind(this)}>
                 Cadastrar

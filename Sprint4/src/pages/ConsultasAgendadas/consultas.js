@@ -3,6 +3,8 @@ import Axios from "axios";
 import '../../assets/css/listar-consulta.css';
 import MenuMedico from "../../components/Menu/MenuMedico";
 import moment from 'moment'
+import Modal from 'react-modal';
+
 
 
 class ListarConsultaMedico extends Component {
@@ -16,7 +18,7 @@ class ListarConsultaMedico extends Component {
             idMedicoNavigation: "",
             dataConsulta: "",
             descricao: "",
-            idSituacaoNavigation: 1
+            idSituacaoNavigation: 1,
         };
     }
     buscarConsultas() {
@@ -37,24 +39,22 @@ class ListarConsultaMedico extends Component {
     }
     CadastrarDescricao(event) {
         event.preventDefault();
-        console.log(event.target)
-        // let consulta = {
+        const idConsulta = (event.target.getAttribute('idConsulta'))
+        let consulta = {
 
-        //     descricao: this.state.descricao
-        // }
-        // let jwt = localStorage.getItem('usuario-spmedgroup');
-        // Axios.put(`http://192.168.3.84:5000/api/consultas/descricao/` + idConsulta, consulta, {
-        //     headers: {
-        //         "authorization": 'Bearer ' + jwt
-        //     }
+            descricao: this.state.descricao
+        }
+        let jwt = localStorage.getItem('usuario-spmedgroup');
+        Axios.put(`http://192.168.3.84:5000/api/consultas/descricao/` + idConsulta, consulta, {
+            headers: {
+                "authorization": 'Bearer ' + jwt
+            }
 
-        // }
-        // )
-        //     .then(res => {
-        //         this.buscarConsultas()
-        //     })
-        // console.log(consulta)
-        // let idConsulta = consulta.getAttribute("idCons")
+        }
+        )
+            .then(_res => {
+                this.buscarConsultas()
+            })
 
     }
 
@@ -90,14 +90,14 @@ class ListarConsultaMedico extends Component {
                                             <td className="consulta--listar__tabela-td">{moment(consulta.dataConsulta).format("DD/MM/YYYY - HH:mm")}</td>
                                             <td className="consulta--listar__tabela-td">{consulta.idSituacaoNavigation.situacao1}</td>
                                             <td className="consulta--listar__tabela-td">
-                                                    <input
-                                                        type="text"
-                                                        value={this.state.nome}
-                                                        onChange={this.atualizaEstadoDescricao.bind(this)}
-                                                        placeholder="Insira uma descricão"
-                                                    />
-                                                    <button type="submit" idConsulta={consulta.id} onClick={this.CadastrarDescricao.bind(this)} className="consulta--listar__botao">
-                                                        Cadastrar
+                                                <input
+                                                    type="text"
+                                                    value={consulta.descricao}
+                                                    onChange={this.atualizaEstadoDescricao.bind(this)}
+                                                    placeholder="Insira uma descricão"
+                                                />
+                                                <button type="submit" idConsulta={consulta.id} onClick={this.CadastrarDescricao.bind(this)} className="consulta--listar__botao">
+                                                    Cadastrar
                                                     </button>
                                             </td>
                                         </tr>
