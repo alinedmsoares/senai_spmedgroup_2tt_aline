@@ -42,14 +42,12 @@ class Login extends Component {
                     </View>
                     <View style={styles.loginForm}>
                         <TextInput style={styles.loginEmail}
-                            defaultValue="fernando@gmail.com"
                             placeholderTextColor="white"
                             placeholder="Email "
                             onChangeText={email => this.setState({ email })}
                         />
                         <TextInput style={styles.loginSenha}
                             placeholderTextColor="white"
-                            defaultValue="123456"
                             placeholder="Senha "
                             secureTextEntry={true}
                             onChangeText={senha => this.setState({ senha })}
