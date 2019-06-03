@@ -129,7 +129,6 @@ class ListarConsulta extends Component {
                                             <td className="consulta--listar__tabela-td">{moment(consulta.dataConsulta).format("DD/MM/YYYY - HH:mm")}</td>
                                             <td className="consulta--listar__tabela-td">{consulta.idSituacaoNavigation.situacao1}</td>
                                             <td className="consulta--listar__tabela-td">{consulta.descricao}</td>
-                                            {/* <td>{consulta.idSituacaoNavigation.situacao1}</td> */}
                                         </tr>
                                     );
 
