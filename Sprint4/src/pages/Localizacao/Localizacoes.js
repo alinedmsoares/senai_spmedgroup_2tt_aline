@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import firebase from '../../services/firebase'
+import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
-export default class Localizacoes extends Component {
+class Localizacoes extends Component {
     constructor() {
         super();
         this.state = {
@@ -10,7 +11,7 @@ export default class Localizacoes extends Component {
             idade: '',
             lat: '',
             long: '',
-            especialidade: ''
+            especialidade: '',
         }
     }
     listaLocalizacoesRealTime() {
@@ -23,7 +24,7 @@ export default class Localizacoes extends Component {
                         descricao: localizacoes.data().descricao,
                         idade: localizacoes.data().localizacoes,
                         lat: localizacoes.data().lat,
-                        long : localizacoes.data().long,
+                        long: localizacoes.data().long,
                         especialidade: localizacoes.data().especialidade
                     })
                 })
@@ -41,7 +42,7 @@ export default class Localizacoes extends Component {
             descricao: '',
             idade: '',
             long: '',
-            lat : '',
+            lat: '',
             especialidade: ''
         })
     }
@@ -49,7 +50,7 @@ export default class Localizacoes extends Component {
         event.preventDefault();
         firebase.firestore().collection("localizacoes")
             .add({
-                descricao:this.state.descricao,
+                descricao: this.state.descricao,
                 idade: Number(this.state.localizacoes),
                 lat: this.state.lat,
                 long: this.state.long,
@@ -63,65 +64,87 @@ export default class Localizacoes extends Component {
                 console.log('erro' + erro)
             })
     }
+    displayMarkers = () => {
+        return this.state.listaLocalizacoes.map((localizacoes) => {
+            return <Marker key={localizacoes.id}  position={{
+                lat: localizacoes.lat,
+                lng: localizacoes.long
+            }}
+                onClick={() => console.log("You clicked me!")} />
+        })
+    }
     componentDidMount() {
         this.listaLocalizacoesRealTime();
     }
     render() {
+
         return (
             <div>
                 <ul>
                     {
                         this.state.listaLocalizacoes.map((localizacoes) => {
-                            return (<li key={localizacoes.id}>{localizacoes.id} - {localizacoes.descricao} - {localizacoes.idade} -  
+                            return (<li key={localizacoes.id}>{localizacoes.id} - {localizacoes.descricao} - {localizacoes.idade} -
                             {localizacoes.long} - {localizacoes.lat} </li>)
                         })
                     }
                 </ul>
 
                 <form onSubmit={this.salvarLocalizacao.bind(this)}>
-                        <label>Idade</label>
-                        <input
-                            type="text"
-                            name="idade"
-                            defaultValue={this.state.idade}
-                            onChange={this.atualizaEstado.bind(this)} required>
-                        </input>
+                    <label>Idade</label>
+                    <input
+                        type="text"
+                        name="idade"
+                        defaultValue={this.state.idade}
+                        onChange={this.atualizaEstado.bind(this)} required>
+                    </input>
 
-                        <label>Descrição</label>
-                        <input
-                            type="text"
-                            name="descricao"
-                            defaultValue={this.state.descricao}
-                            onChange={this.atualizaEstado.bind(this)} required>
-                        </input>
+                    <label>Descrição</label>
+                    <input
+                        type="text"
+                        name="descricao"
+                        defaultValue={this.state.descricao}
+                        onChange={this.atualizaEstado.bind(this)} required>
+                    </input>
 
-                        <label>Especialidade</label>
-                        <input
-                            type="text"
-                            name="especialidade"
-                            defaultValue={this.state.especialidade}
-                            onChange={this.atualizaEstado.bind(this)} required>
-                        </input>
+                    <label>Especialidade</label>
+                    <input
+                        type="text"
+                        name="especialidade"
+                        defaultValue={this.state.especialidade}
+                        onChange={this.atualizaEstado.bind(this)} required>
+                    </input>
 
-                        <label>Latitude</label>
-                        <input
-                            type="text"
-                            name="lat"
-                            defaultValue={this.state.lat}
-                            onChange={this.atualizaEstado.bind(this)} required>
-                        </input>
+                    <label>Latitude</label>
+                    <input
+                        type="text"
+                        name="lat"
+                        defaultValue={this.state.lat}
+                        onChange={this.atualizaEstado.bind(this)} required>
+                    </input>
 
-                        <label>Longitude</label>
-                        <input
-                            type="text"
-                            name="long"
-                            defaultValue={this.state.long}
-                            onChange={this.atualizaEstado.bind(this)} required>
-                        </input>
+                    <label>Longitude</label>
+                    <input
+                        type="text"
+                        name="long"
+                        defaultValue={this.state.long}
+                        onChange={this.atualizaEstado.bind(this)} required>
+                    </input>
 
-                        <button type="submit">Salvar</button>
-                    </form>
+                    <button type="submit">Salvar</button>
+                </form>
+                <Map
+                    google={this.props.google}
+                    zoom={8}
+                    initialCenter={{ lat: -23.5504533, lng: -46.6514207 }}
+                >
+                    {this.displayMarkers()}
+                </Map>
+
             </div>
         )
     }
 }
+
+export default GoogleApiWrapper({
+    apiKey: ("AIzaSyAS7Z4-kTwKCmokhqFPbDpRk6gJZm1a8Yo")
+})(Localizacoes)

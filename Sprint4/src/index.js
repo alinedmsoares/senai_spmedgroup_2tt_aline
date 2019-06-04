@@ -74,6 +74,6 @@ import * as serviceWorker from './serviceWorker';
 //     </Router>
 //);
 //ReactDOM.render(rotas, document.getElementById('root'));
-ReactDOM.render(<map />, document.getElementById('root'));
+ReactDOM.render(<Localizacoes />, document.getElementById('root'));
 
 serviceWorker.unregister();
