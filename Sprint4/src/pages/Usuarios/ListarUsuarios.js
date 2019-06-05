@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import apiService from "../../services/apiService";
 import '../../assets/css/listar-usuario.css';
 import Menu from "../../components/Menu/Menu"
-import moment from 'moment'
 
 class ListarUsuarios extends Component {
     constructor() {

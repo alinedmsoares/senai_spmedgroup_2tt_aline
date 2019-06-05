@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import logo from '../../assets/img/icon.png'
 import imagemLogin from '../../assets/img/medicos.PNG';
-import { Link } from "react-router-dom";
 import Axios from "axios";
 import '../../assets/css/reset.css';
 import '../../assets/css/login.css';
 import { parseJwt } from '../../services/auth';
-import { parse } from 'path';
+
 
 
 
@@ -40,7 +39,7 @@ class App extends Component {
           localStorage.setItem("usuario-spmedgroup", data.data.token);
           console.log(parseJwt().Role);
           if (parseJwt().Role === "Administrador") {
-            this.props.history.push("/consulta/listar")
+            this.props.history.push("/clinica/listar")
           }
           else if (parseJwt().Role === "Paciente") {
             this.props.history.push("/consulta/minhas")
@@ -70,7 +69,7 @@ class App extends Component {
           {/* campo de login */}
           <form onSubmit={this.efetuaLogin.bind(this)} className="app--form">
             <div className="app--login">
-              <label for="inp" className="inp">
+              <label htmlFor="inp" className="inp">
                 <input
                   type="text"
                   value={this.state.email}
@@ -79,10 +78,10 @@ class App extends Component {
                   name="email"
                   id="inp"
                 />
-                <span class="label">Email</span>
+                <span className="label">Email</span>
                 <span className="border"></span>
               </label>
-              <label for="inp" class="inp">
+              <label htmlFor="inp" className="inp">
                 <input
                   type="password"
                   placeholder="&nbsp;"
@@ -91,8 +90,8 @@ class App extends Component {
                   name="senha"
                   id="inp"
                 />
-                <span class="label">Senha</span>
-                <span class="border"></span>
+                <span className="label">Senha</span>
+                <span className="border"></span>
               </label>
               <div className="app--login__button">
                 <button type="submit" className="app--btn__login">

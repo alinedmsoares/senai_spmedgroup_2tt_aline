@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import firebase from '../../services/firebase'
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import '../../assets/css/localizacao.css';
+import Menu from "../../components/Menu/Menu"
 
 class Localizacoes extends Component {
     constructor() {
@@ -66,72 +68,110 @@ class Localizacoes extends Component {
     }
     displayMarkers = () => {
         return this.state.listaLocalizacoes.map((localizacoes) => {
-            return <Marker key={localizacoes.id}  position={{
+            return <Marker key={localizacoes.id} position={{
                 lat: localizacoes.lat,
                 lng: localizacoes.long
             }}
                 onClick={() => console.log("You clicked me!")} />
         })
     }
+
     componentDidMount() {
         this.listaLocalizacoesRealTime();
     }
     render() {
-
         return (
-            <div>
-                <ul>
-                    {
-                        this.state.listaLocalizacoes.map((localizacoes) => {
-                            return (<li key={localizacoes.id}>{localizacoes.id} - {localizacoes.descricao} - {localizacoes.idade} -
-                            {localizacoes.long} - {localizacoes.lat} </li>)
-                        })
-                    }
-                </ul>
+            <div className="localizacao--listar">
+                <div className="cadastrar--listar__menu">
+                    <Menu />
+                </div>
+                <h1 className="localizacao--listar__titulo">Cadastrar Localização</h1>
+                <form onSubmit={this.salvarLocalizacao.bind(this)} noValidate className="localizacao--cadastrar__formulario">
+                    <div className="localizacao--cadastrar__form_all">
+                        <div className="localizacao--cadastrar__form_a">
+                            <input
+                                type="text"
+                                required
+                                value={this.state.descricao}
+                                onChange={this.atualizaEstado.bind(this)}
+                                placeholder="Descrição"
+                                className="localizacao--cadastrar__input"
+                            />
+                            <input
+                                type="text"
+                                required
+                                value={this.state.idade}
+                                onChange={this.atualizaEstado.bind(this)}
+                                placeholder="Idade"
+                                className="localizacao--cadastrar__input"
+                            />
+                            <input
+                                type="text"
+                                required
+                                value={this.state.especialidade}
+                                onChange={this.atualizaEstado.bind(this)}
+                                placeholder="Especialidade"
+                                className="localizacao--cadastrar__input"
+                            />
+                        </div>
+                        <div className="localizacao--cadastrar__form_b">
 
-                <form onSubmit={this.salvarLocalizacao.bind(this)}>
-                    <label>Idade</label>
-                    <input
-                        type="text"
-                        name="idade"
-                        defaultValue={this.state.idade}
-                        onChange={this.atualizaEstado.bind(this)} required>
-                    </input>
+                            <input
+                                type="text"
+                                required
+                                value={this.state.lat}
+                                onChange={this.atualizaEstado.bind(this)}
+                                placeholder="Latitude"
+                                className="localizacao--cadastrar__input"
+                            />
+                            <input
+                                type="text"
+                                required
+                                value={this.state.long}
+                                onChange={this.atualizaEstado.bind(this)}
+                                placeholder="Longitude"
+                                className="localizacao--cadastrar__input"
+                            />
+                            <div className="localizacao--cadastrar__botao">
+                                <button type="submit">
+                                    Cadastrar
+                </button>
+                            </div>
+                        </div>
+                    </div>
 
-                    <label>Descrição</label>
-                    <input
-                        type="text"
-                        name="descricao"
-                        defaultValue={this.state.descricao}
-                        onChange={this.atualizaEstado.bind(this)} required>
-                    </input>
+                </form >
+                <h1 className="localizacao--listar__titulo">Listar Localizações</h1>
+                <div className="localizacao--listar__tabela">
+                    <table className="localizacao--listar__tabela-tabela">
+                        <thead className="localizacao--listar__tabela-thead">
+                            <tr className="localizacao--listar__tabela-tr">
+                                <th className="localizacao--listar__tabela-th">Descrição</th>
+                                <th className="localizacao--listar__tabela-th">Especialidade</th>
+                                <th className="localizacao--listar__tabela-th">Idade</th>
+                                <th className="localizacao--listar__tabela-th">Latitude</th>
+                                <th className="localizacao--listar__tabela-th">Longitude</th>
+                            </tr>
+                        </thead>
 
-                    <label>Especialidade</label>
-                    <input
-                        type="text"
-                        name="especialidade"
-                        defaultValue={this.state.especialidade}
-                        onChange={this.atualizaEstado.bind(this)} required>
-                    </input>
+                        <tbody className="localizacao--listar__tabela-tbody">
+                            {
+                                this.state.listaLocalizacoes.map(localizacoes => {
+                                    return (
+                                        <tr className="localizacao--listar__tabela-tr-dados" key={localizacoes.id}>
+                                            <td className="localizacao--listar__tabela-td">{localizacoes.descricao}</td>
+                                            <td className="localizacao--listar__tabela-td">{localizacoes.idade}</td>
+                                            <td className="localizacao--listar__tabela-td">{localizacoes.especialidade}</td>
+                                            <td className="localizacao--listar__tabela-td">{localizacoes.lat}</td>
+                                            <td className="localizacao--listar__tabela-td">{localizacoes.long}</td>
+                                        </tr>
+                                    );
 
-                    <label>Latitude</label>
-                    <input
-                        type="text"
-                        name="lat"
-                        defaultValue={this.state.lat}
-                        onChange={this.atualizaEstado.bind(this)} required>
-                    </input>
-
-                    <label>Longitude</label>
-                    <input
-                        type="text"
-                        name="long"
-                        defaultValue={this.state.long}
-                        onChange={this.atualizaEstado.bind(this)} required>
-                    </input>
-
-                    <button type="submit">Salvar</button>
-                </form>
+                                })
+                            }
+                        </tbody>
+                    </table>
+                </div>
                 <Map
                     google={this.props.google}
                     zoom={8}
@@ -139,7 +179,6 @@ class Localizacoes extends Component {
                 >
                     {this.displayMarkers()}
                 </Map>
-
             </div>
         )
     }

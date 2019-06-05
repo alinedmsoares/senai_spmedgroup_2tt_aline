@@ -31,6 +31,10 @@ function Menu() {
                             <Link to ="/usuarios/listar"><i className="fas fa-user"></i> Usuários </Link>
                         </li>
 
+                        <li data-toggle="collapse" data-target="#products" className="collapsed active">
+                            <Link to ="/localizacoes"><i class="fas fa-map-marked-alt"></i>  Localizações </Link>
+                        </li>
+
 
                         <li data-toggle="collapse" data-target="#new" className="collapsed">
                             <Link to ="/prontuario/listar"><i className="fas fa-file-medical-alt"></i> Prontuários</Link>

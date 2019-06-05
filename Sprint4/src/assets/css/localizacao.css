@@ -1,0 +1,185 @@
+.localizacao--cadastrar{
+    height: 100vh;
+    background-color: #E6E6E6;
+  }
+  .localizacao--cadastrar__form{
+    height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+  }
+  .localizacao--cadastrar__form_all{
+    margin-left: 40%;
+    height: 40vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+  }
+  .localizacao--cadastrar__form_a{
+    display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 26vh;
+  justify-content: space-around;
+  align-items: flex-end;
+  }
+  .localizacao--cadastrar__form_b{
+    display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 26vh;
+      justify-content: space-around;
+      align-items: center;
+  }
+  
+  .localizacao--cadastrar__titulo{
+    font-family: "Roboto Light";
+    font-size: 2em;
+    color: #83BEDF;
+    margin: 0% 10% 0% 0%;
+  }
+
+  .localizacao--cadastrar__formulario{
+    width: 80%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+  .localizacao--cadastrar__formulario_form{
+    width: 80%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  .localizacao--mapa{
+      width: 50%;
+      height: 50%;
+  }
+  .localizacao--cadastrar__input{
+    background-color: rgb(255, 255, 255);
+    font-size: 1em;
+    color: #AFAFAF;
+    font-family: "Roboto Light";
+    width: 80%;
+    height: 7vh;
+    box-shadow: 3px 0px 8px rgb(0, 0, 0, 40%);
+    border-radius: 10px;
+    padding: 0.5em;
+  }
+  .localizacao--cadastrar__formulario_all{
+    width: 80%;
+    height: 44vh;    
+    display: flex;
+    justify-content: center;
+  }
+  .localizacao--cadastrar__botao button{
+    width: 100%;
+    color: white;
+    height: 6vh;
+    background-image: linear-gradient(36deg, #A4ECFF, #9CE1F8, #6B9CCE, #192A87);
+    border-radius: 10px;
+    font-family: "Microsoft Yi Baiti";
+    font-size: 2em;
+    box-shadow: 3px 3px 9px rgb(0, 0, 0, 40%);
+    font-weight: 500;
+  
+  }
+  .localizacao--cadastrar__botao{
+    width: 40%;
+    height: 6vh;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+.localizacao--listar{
+    background-color: #E6E6E6;
+  }
+  .localizacao--listar__titulo{
+    font-family: "Roboto Light";
+    font-size: 2em;
+    color: #83BEDF;
+    margin: 0% 0% 0% 21%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 5%;
+  }
+  .localizacao--listar__tabela{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+  }
+  .localizacao--listar__tabela-th{
+      font-family: "Berlin Sans FB";
+      color: #CCCCCC;
+    font-size: 1.3em;
+  }
+  .localizacao--listar__tabela-tabela{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .localizacao--listar__tabela-thead{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .localizacao--listar__tabela-tr{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 2%;
+}
+.localizacao--listar__tabela-tr-dados{
+    display: flex;
+    width: 80%;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin-bottom: 1%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 0px 8px rgb(0, 0, 0, 40%);
+
+    padding: 1%;
+}
+.localizacao--listar__tabela-td{
+    
+  height: 3vh;
+  width: 81%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: "Berlin Sans FB";
+  color: #999999;
+    
+}
+.localizacao--listar__tabela-tbody{
+    width: 87%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.localizacao--listar__botao{
+  background-color: cornflowerblue;
+  color: white;
+  padding: 2%;
+  border-radius: 5px;
+}
+    
