@@ -92,9 +92,9 @@ class Localizacoes extends Component {
                             <input
                                 type="text"
                                 required
-                                value={this.state.descricao}
                                 onChange={this.atualizaEstado.bind(this)}
                                 placeholder="Descrição"
+                                value={this.state.descricao}
                                 className="localizacao--cadastrar__input"
                             />
                             <input
@@ -107,8 +107,8 @@ class Localizacoes extends Component {
                             />
                             <input
                                 type="text"
-                                required
                                 value={this.state.especialidade}
+                                required
                                 onChange={this.atualizaEstado.bind(this)}
                                 placeholder="Especialidade"
                                 className="localizacao--cadastrar__input"
@@ -185,5 +185,5 @@ class Localizacoes extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: ("AIzaSyAS7Z4-kTwKCmokhqFPbDpRk6gJZm1a8Yo")
+    apiKey: ("AIzaSyCFaeo0DBcDmUmXPuipE-_b9bqlWq41kV8")
 })(Localizacoes)

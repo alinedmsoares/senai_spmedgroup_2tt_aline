@@ -3,7 +3,6 @@ import Axios from "axios";
 import Menu from "../../components/Menu/Menu"
 import '../../assets/css/reset.css';
 import '../../assets/css/cadastrar-consulta.css';
-import apiService from "../../services/apiService";
 
 class CadastrarConsulta extends Component {
     constructor() {

@@ -32,7 +32,7 @@ function Menu() {
                         </li>
 
                         <li data-toggle="collapse" data-target="#products" className="collapsed active">
-                            <Link to ="/localizacoes"><i class="fas fa-map-marked-alt"></i>  Localizações </Link>
+                            <Link to ="/localizacoes"><i className="fas fa-map-marked-alt"></i>  Localizações </Link>
                         </li>
 
 
