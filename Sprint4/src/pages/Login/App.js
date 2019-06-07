@@ -5,6 +5,8 @@ import Axios from "axios";
 import '../../assets/css/reset.css';
 import '../../assets/css/login.css';
 import { parseJwt } from '../../services/auth';
+import swal from 'sweetalert2'
+
 
 
 
@@ -25,7 +27,15 @@ class App extends Component {
   atualizaEstadoSenha(event) {
     this.setState({ senha: event.target.value });
   }
-
+  AlertError() {
+    swal.fire({
+        position: 'center-center',
+        type: 'error',
+        title: 'Email ou senha incorretos',
+        showConfirmButton: false,
+        timer: 1500
+      })
+}
   efetuaLogin(event) {
     event.preventDefault();
 
@@ -50,6 +60,7 @@ class App extends Component {
         }
       })
       .catch(erro => {
+        this.AlertError();
         console.log(erro);
       })
   }

@@ -1,6 +1,8 @@
+
 .localizacao--cadastrar{
-    height: 100vh;
     background-color: #E6E6E6;
+    display: block;
+    margin: auto;
   }
   .localizacao--cadastrar__form{
     height: 100vh;
@@ -181,5 +183,14 @@
   color: white;
   padding: 2%;
   border-radius: 5px;
+}
+.localizacao--mapa{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  height: 60vh;
 }
     

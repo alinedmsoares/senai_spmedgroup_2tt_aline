@@ -27,11 +27,11 @@ function Menu() {
                             <li><Link to ="/consulta/listar">Listar</Link></li>
                         </ul>
 
-                        <li data-toggle="collapse" data-target="#products" className="collapsed active">
+                        <li data-toggle="collapse" data-target="#products" className="collapsed">
                             <Link to ="/usuarios/listar"><i className="fas fa-user"></i> Usuários </Link>
                         </li>
 
-                        <li data-toggle="collapse" data-target="#products" className="collapsed active">
+                        <li data-toggle="collapse" data-target="#products" className="collapsed">
                             <Link to ="/localizacoes"><i className="fas fa-map-marked-alt"></i>  Localizações </Link>
                         </li>
 

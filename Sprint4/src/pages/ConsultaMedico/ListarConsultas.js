@@ -3,7 +3,7 @@ import Axios from "axios";
 import '../../assets/css/listar-consulta.css';
 import MenuMedico from "../../components/Menu/MenuMedico";
 import moment from 'moment'
-import Modal from 'react-modal';
+import swal from 'sweetalert2'
 
 
 
@@ -52,12 +52,23 @@ class ListarConsultaMedico extends Component {
 
         }
         )
-            .then(_res => {
-                this.buscarConsultas()
+            .then(() => {
+                this.AlertConfirm();
+                this.buscarConsultas();
             })
-
+            .catch((erro) => {
+                console.log('erro' + erro)
+            })
     }
-
+    AlertConfirm() {
+        swal.fire({
+            position: 'center-center',
+            type: 'success',
+            title: 'Descrição Cadastrada',
+            showConfirmButton: false,
+            timer: 1500
+          })
+    }
     componentDidMount() {
         this.buscarConsultas();
     }

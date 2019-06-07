@@ -3,7 +3,6 @@ import Axios from "axios";
 import '../../assets/css/listar-consulta.css';
 import MenuPaciente from "../../components/Menu/MenuPaciente"
 import moment from 'moment'
-import apiService from "../../services/apiService";
 
 class ListarConsultaPaciente extends Component {
     constructor() {

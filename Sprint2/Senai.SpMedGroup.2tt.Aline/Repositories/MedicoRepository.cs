@@ -41,13 +41,14 @@ namespace Senai.SpMedGroup.WebApi.Aline.Repositories
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                List<Medicos> listaMedicos = ctx.Medicos.Include(x => x.IdClinicaNavigation).Include(x => x.IdUsuarioNavigation).ToList();
+                List<Medicos> listaMedicos = ctx.Medicos.Include(x => x.IdClinicaNavigation).Include(x => x.IdUsuarioNavigation).Include(x => x.IdEspecialidadeNavigation).ToList();
 
 
                 foreach (var item in listaMedicos)
                 {
                     item.IdClinicaNavigation.Medicos = null;
                     item.IdUsuarioNavigation.Medicos = null;
+                    item.IdEspecialidadeNavigation.Medicos = null;
                 }
 
                 return listaMedicos;

@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import apiService from "../../services/apiService";
-//import '../../assets/css/listar-medicos.css';
+import '../../assets/css/listar-medico.css';
 import Menu from "../../components/Menu/Menu"
-import moment from 'moment'
 
 class ListarMedicos extends Component {
     constructor() {
@@ -15,7 +13,7 @@ class ListarMedicos extends Component {
             listaClinica:[],
             nome: " ",
             crm: " ",
-            idClinicaNavigation: "",
+            idEspecialidadeNavigation: "",
             idUsuarioNavigation: ""
         };
     }
@@ -32,16 +30,16 @@ class ListarMedicos extends Component {
                 this.setState({ listaMedicos: medicos })
             })
     }
-    buscarClinica() {
+    buscarEspecialidade() {
         let jwt = localStorage.getItem('usuario-spmedgroup');
-        axios.get(`http://192.168.3.84:5000/api/clinicas`, {
+        axios.get(`http://192.168.3.84:5000/api/especialidade`, {
             headers: {
                 "authorization": 'Bearer ' + jwt
             }
         })
             .then(res => {
-                const clinica = res.data;
-                this.setState({ IdClinicaNavigation: clinica })
+                const especialidade = res.data;
+                this.setState({ IdEspecialidadeNavigation: especialidade })
             })
     }
     buscarUsuarios() {
@@ -66,45 +64,45 @@ class ListarMedicos extends Component {
     atualizarEstadoUsuario(event) {
         this.setState({ idUsuarioNavigation: event.target.value });
     }
-    atualizarEstadoClinica(event) {
-        this.setState({ idClinicaNavigation: event.target.value });
+    atualizarEstadoEspecialidade(event) {
+        this.setState({ idEspecialidadeNavigation: event.target.value });
     }
     componentDidMount() {
-        this.buscarClinica();
+        this.buscarEspecialidade();
         this.buscarMedicos();
         this.buscarUsuarios();
     }
     render() {
         return (
-            <div className="usuario--listar">
+            <div className="medico--listar">
                 <div className="cadastrar--listar__menu">
                     <Menu />
                 </div>
-                <h1 className="usuario--listar__titulo">Listar Médicos</h1>
+                <h1 className="medico--listar__titulo">Listar Médicos</h1>
 
-                <div className="usuario--listar__tabela">
-                    <table className="usuario--listar__tabela-tabela">
-                        <thead className="usuario--listar__tabela-thead">
-                            <tr className="usuario--listar__tabela-tr">
-                                <th className="usuario--listar__tabela-th">#</th>
-                                <th className="usuario--listar__tabela-th">Nome</th>
-                                <th className="usuario--listar__tabela-th">CRM</th>
-                                <th className="usuario--listar__tabela-th">Email</th>
-                                <th className="usuario--listar__tabela-th">Clínica</th>
+                <div className="medico--listar__tabela">
+                    <table className="medico--listar__tabela-tabela">
+                        <thead className="medico--listar__tabela-thead">
+                            <tr className="medico--listar__tabela-tr">
+                                <th className="medico--listar__tabela-th">#</th>
+                                <th className="medico--listar__tabela-th">Nome</th>
+                                <th className="medico--listar__tabela-th">CRM</th>
+                                <th className="medico--listar__tabela-th">Email</th>
+                                <th className="medico--listar__tabela-th">Especialidade</th>
 
                             </tr>
                         </thead>
 
-                        <tbody className="usuario--listar__tabela-tbody">
+                        <tbody className="medico--listar__tabela-tbody">
                             {
                                 this.state.listaMedicos.map(element => {
                                     return (
-                                        <tr className="usuario--listar__tabela-tr-dados" key={element.id}>
-                                            <td className="usuario--listar__tabela-td">{element.id}</td>
-                                            <td className="usuario--listar__tabela-td">{element.nome}</td>
-                                            <td className="usuario--listar__tabela-td">{element.crm}</td>
-                                            <td className="usuario--listar__tabela-td">{element.idUsuarioNavigation.email}</td>
-                                            <td className="usuario--listar__tabela-td">{element.idClinicaNavigation.nomeFantasia}</td> 
+                                        <tr className="medico--listar__tabela-tr-dados" key={element.id}>
+                                            <td className="medico--listar__tabela-td">{element.id}</td>
+                                            <td className="medico--listar__tabela-td">{element.nome}</td>
+                                            <td className="medico--listar__tabela-td">{element.crm}</td>
+                                            <td className="medico--listar__tabela-td">{element.idUsuarioNavigation.email}</td>
+                                            <td className="medico--listar__tabela-td">{element.idEspecialidadeNavigation.nome}</td> 
 
                                         </tr>
                                     );

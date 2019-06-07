@@ -1,5 +1,6 @@
 .clinica--listar{
   background-color: #E6E6E6;
+  height: 100vh;
 }
 .clinica--listar__titulo{
   font-family: "Roboto Light";

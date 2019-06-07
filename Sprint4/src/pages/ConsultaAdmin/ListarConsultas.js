@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Axios from "axios";
-import apiService from "../../services/apiService";
 import '../../assets/css/listar-consulta.css';
 import Menu from "../../components/Menu/Menu"
 import moment from 'moment'

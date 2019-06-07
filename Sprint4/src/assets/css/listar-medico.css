@@ -1,0 +1,83 @@
+.medico--listar{
+    background-color: #E6E6E6;
+    height: 100vh;  }
+  .medico--listar__titulo{
+    font-family: "Roboto Light";
+    font-size: 2em;
+    color: #83BEDF;
+    margin: 0% 0% 0% 21%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 5%;
+  }
+  .medico--listar__tabela{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+  }
+  .medico--listar__tabela-th{
+      font-family: "Berlin Sans FB";
+      color: #CCCCCC;
+    font-size: 1em;
+  }
+  .medico--listar__tabela-tabela{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .medico--listar__tabela-thead{
+    width: 86%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .medico--listar__tabela-tr{
+    display: flex;
+    width: 78%;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 2%;
+}
+.medico--listar__tabela-tr-dados{
+    display: flex;
+    width: 82%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 0px 8px rgb(0, 0, 0, 40%);
+
+    padding: 1%;
+}
+.medico--listar__tabela-td{
+    
+  height: 5vh;
+  width: 79%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: "Berlin Sans FB";
+  color: #999999;
+    
+}
+.medico--listar__tabela-tbody{
+    width: 79%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.medico--listar__botao{
+  background-color: cornflowerblue;
+  color: white;
+  padding: 2%;
+  border-radius: 5px;
+}
+    

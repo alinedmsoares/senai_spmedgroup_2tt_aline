@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import firebase from '../../services/firebase'
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 import '../../assets/css/localizacao.css';
 import Menu from "../../components/Menu/Menu"
+import swal from 'sweetalert2'
+
 
 class Localizacoes extends Component {
     constructor() {
@@ -24,7 +26,7 @@ class Localizacoes extends Component {
                     localizacoesArray.push({
                         id: localizacoes.id,
                         descricao: localizacoes.data().descricao,
-                        idade: localizacoes.data().localizacoes,
+                        idade: localizacoes.data().idade,
                         lat: localizacoes.data().lat,
                         long: localizacoes.data().long,
                         especialidade: localizacoes.data().especialidade
@@ -53,18 +55,27 @@ class Localizacoes extends Component {
         firebase.firestore().collection("localizacoes")
             .add({
                 descricao: this.state.descricao,
-                idade: Number(this.state.localizacoes),
+                idade: Number(this.state.idade),
                 lat: this.state.lat,
                 long: this.state.long,
                 especialidade: this.state.especialidade
             })
             .then(() => {
-                alert("Localização Cadastrada")
+                this.AlertConfirm();
                 this.limparFormulario();
             })
             .catch((erro) => {
                 console.log('erro' + erro)
             })
+    }
+    AlertConfirm() {
+        swal.fire({
+            position: 'center-center',
+            type: 'success',
+            title: 'Localização Cadastrada',
+            showConfirmButton: false,
+            timer: 1500
+          })
     }
     displayMarkers = () => {
         return this.state.listaLocalizacoes.map((localizacoes) => {
@@ -92,6 +103,7 @@ class Localizacoes extends Component {
                             <input
                                 type="text"
                                 required
+                                name="descricao"
                                 onChange={this.atualizaEstado.bind(this)}
                                 placeholder="Descrição"
                                 value={this.state.descricao}
@@ -100,6 +112,7 @@ class Localizacoes extends Component {
                             <input
                                 type="text"
                                 required
+                                name="idade"
                                 value={this.state.idade}
                                 onChange={this.atualizaEstado.bind(this)}
                                 placeholder="Idade"
@@ -107,6 +120,7 @@ class Localizacoes extends Component {
                             />
                             <input
                                 type="text"
+                                name="especialidade"
                                 value={this.state.especialidade}
                                 required
                                 onChange={this.atualizaEstado.bind(this)}
@@ -118,6 +132,7 @@ class Localizacoes extends Component {
 
                             <input
                                 type="text"
+                                name="lat"
                                 required
                                 value={this.state.lat}
                                 onChange={this.atualizaEstado.bind(this)}
@@ -126,6 +141,7 @@ class Localizacoes extends Component {
                             />
                             <input
                                 type="text"
+                                name="long"
                                 required
                                 value={this.state.long}
                                 onChange={this.atualizaEstado.bind(this)}
@@ -133,9 +149,9 @@ class Localizacoes extends Component {
                                 className="localizacao--cadastrar__input"
                             />
                             <div className="localizacao--cadastrar__botao">
-                                <button type="submit">
+                                <button id="mensagem-sucesso">
                                     Cadastrar
-                </button>
+</button>
                             </div>
                         </div>
                     </div>
@@ -160,8 +176,8 @@ class Localizacoes extends Component {
                                     return (
                                         <tr className="localizacao--listar__tabela-tr-dados" key={localizacoes.id}>
                                             <td className="localizacao--listar__tabela-td">{localizacoes.descricao}</td>
-                                            <td className="localizacao--listar__tabela-td">{localizacoes.idade}</td>
                                             <td className="localizacao--listar__tabela-td">{localizacoes.especialidade}</td>
+                                            <td className="localizacao--listar__tabela-td">{localizacoes.idade}</td>
                                             <td className="localizacao--listar__tabela-td">{localizacoes.lat}</td>
                                             <td className="localizacao--listar__tabela-td">{localizacoes.long}</td>
                                         </tr>
@@ -172,13 +188,16 @@ class Localizacoes extends Component {
                         </tbody>
                     </table>
                 </div>
-                <Map
-                    google={this.props.google}
-                    zoom={8}
-                    initialCenter={{ lat: -23.5504533, lng: -46.6514207 }}
-                >
-                    {this.displayMarkers()}
-                </Map>
+                <div className='localizacao--mapa'>
+                    <Map
+                        google={this.props.google}
+                        zoom={8}
+                        initialCenter={{ lat: -23.5504533, lng: -46.6514207 }}
+                        style={{ width: '100% ', height: ' 60vh ', posição: ' absolute ', margin: 'auto', borderColor: 'rgb(230, 230, 230)', borderWidth: '3em 6em 1em 23em', borderStyle: 'solid' }}
+                    >
+                        {this.displayMarkers()}
+                    </Map>
+                </div>
             </div>
         )
     }
