@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './pages/Login/App';
 import CadastrarConsulta from './pages/ConsultaAdmin/CadastrarConsultas'
 import NaoEncontrado from './pages/NaoEncontrado/naoencontrado'

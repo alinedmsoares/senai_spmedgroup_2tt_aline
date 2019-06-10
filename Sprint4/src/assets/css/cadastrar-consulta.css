@@ -10,6 +10,23 @@
     align-items: center;
     justify-content: space-around;
 }
+.logout{
+  width: 92%;
+  height: 10vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.logout button{
+  width: 6%;
+  color: white;
+  height: 6vh;
+  background-image: linear-gradient(36deg,#9CE1F8, #6B9CCE, #192A87);
+  border-radius: 5px;
+  font-family: "Microsoft Yi Baiti";
+  font-size: 1.5em;
+  font-weight: 200;
+}
 .consulta--cadastrar__form_all{
   margin-left: 20%;
   height: 35vh;

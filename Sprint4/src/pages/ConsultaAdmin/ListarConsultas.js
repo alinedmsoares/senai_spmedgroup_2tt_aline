@@ -20,6 +20,10 @@ class ListarConsulta extends Component {
             idSituacaoNavigation: ""
         };
     }
+    realizarLogout() {
+        localStorage.clear();
+        window.location.href = '/';
+      }
     buscarConsultas() {
         let jwt = localStorage.getItem('usuario-spmedgroup');
 
@@ -102,6 +106,11 @@ class ListarConsulta extends Component {
             <div className="consulta--listar">
                 <div className="cadastrar--listar__menu">
                     <Menu />
+                </div>
+                <div className="logout">
+                    <button onClick={this.realizarLogout.bind(this)}>
+                Sair 
+            </button>
                 </div>
                 <h1 className="consulta--listar__titulo">Listar Consultas</h1>
                 <div className="consulta--listar__tabela">

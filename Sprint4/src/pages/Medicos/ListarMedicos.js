@@ -72,11 +72,20 @@ class ListarMedicos extends Component {
         this.buscarMedicos();
         this.buscarUsuarios();
     }
+    realizarLogout() {
+        localStorage.clear();
+        window.location.href = '/';
+      }
     render() {
         return (
             <div className="medico--listar">
                 <div className="cadastrar--listar__menu">
                     <Menu />
+                </div>
+                <div className="logout">
+                    <button onClick={this.realizarLogout.bind(this)}>
+                Sair 
+            </button>
                 </div>
                 <h1 className="medico--listar__titulo">Listar Médicos</h1>
 

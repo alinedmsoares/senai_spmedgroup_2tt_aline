@@ -4,6 +4,8 @@ import '../../assets/css/listar-consulta.css';
 import MenuPaciente from "../../components/Menu/MenuPaciente"
 import moment from 'moment'
 
+
+
 class ListarConsultaPaciente extends Component {
     constructor() {
         super();
@@ -14,7 +16,7 @@ class ListarConsultaPaciente extends Component {
             idProntuarioNavigation: "",
             idMedicoNavigation: "",
             dataConsulta: "",
-            idSituacaoNavigation: 1
+            idSituacaoNavigation: 1,
         };
     }
     buscarConsultas() {
@@ -62,12 +64,22 @@ class ListarConsultaPaciente extends Component {
     componentDidMount() {
         this.buscarConsultas();
     }
+    realizarLogout() {
+        localStorage.clear();
+        window.location.href = '/';
+      }
+
     render() {
         return (
             <div className="consulta--listar">
             <div className="consulta--listar__menu">
                 <MenuPaciente/>
                 </div>  
+                <div className="logout">
+                    <button onClick={this.realizarLogout.bind(this)}>
+                Sair 
+            </button>
+                </div>
                 <h1 className="consulta--listar__titulo">Listar Consultas</h1>
                 <div className="consulta--listar__tabela">
 

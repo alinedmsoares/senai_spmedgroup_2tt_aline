@@ -74,11 +74,20 @@ class ListarUsuarios extends Component {
         this.buscarUsuarios();
         this.buscarTiposUsuarios();
     }
+    realizarLogout() {
+        localStorage.clear();
+        window.location.href = '/';
+      }
     render() {
         return (
             <div className="usuario--listar">
                 <div className="cadastrar--listar__menu">
                     <Menu />
+                </div>
+                <div className="logout">
+                    <button onClick={this.realizarLogout.bind(this)}>
+                Sair 
+            </button>
                 </div>
                 <h1 className="usuario--listar__titulo">Listar Usuários</h1>
 

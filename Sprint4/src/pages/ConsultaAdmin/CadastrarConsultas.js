@@ -17,6 +17,10 @@ class CadastrarConsulta extends Component {
             idSituacaoNavigation: 3
         };
     }
+    realizarLogout() {
+        localStorage.clear();
+        window.location.href = '/';
+      }
     buscarConsultas() {
         let jwt = localStorage.getItem('usuario-spmedgroup');
 
@@ -91,11 +95,20 @@ class CadastrarConsulta extends Component {
         this.buscarMedicos();
         this.buscarProntuarios();
     }
+    realizarLogout() {
+        localStorage.clear();
+        window.location.href = '/';
+      }
     render() {
         return (
             <div className="consulta--cadastrar">  
             <div className="cadastrar--consulta__menu">
                 <Menu/>
+                </div>
+                <div className="logout">
+                    <button onClick={this.realizarLogout.bind(this)}>
+                Sair 
+            </button>
                 </div>
                 <div className="consulta--cadastrar__form">
                 <h1 className="consulta--cadastrar__titulo">Cadastrar Consulta</h1>

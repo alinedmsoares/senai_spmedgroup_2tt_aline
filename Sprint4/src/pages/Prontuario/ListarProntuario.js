@@ -91,11 +91,20 @@ class ListarProntuario extends Component {
         this.buscarProntuario();
         this.buscarUsuarios();
     }
+    realizarLogout() {
+        localStorage.clear();
+        window.location.href = '/';
+      }
     render() {
         return (
                 <div className="prontuario--listar">
                 <div className="cadastrar--listar__menu">
                     <Menu />
+                </div>
+                <div className="logout">
+                    <button onClick={this.realizarLogout.bind(this)}>
+                Sair 
+            </button>
                 </div>
                 <h1 className="prontuario--listar__titulo">Listar Prontuários</h1>
                 <div className="prontuario--listar__tabela">

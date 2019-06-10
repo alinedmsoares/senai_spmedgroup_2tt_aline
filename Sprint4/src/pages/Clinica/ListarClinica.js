@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../../assets/css/listar-clinica.css';
 import Menu from "../../components/Menu/Menu"
 
+
 class ListarClinica extends Component {
     constructor() {
         super();
@@ -16,6 +17,10 @@ class ListarClinica extends Component {
             horarioFuncionamento : ""
         };
     }
+    realizarLogout() {
+        localStorage.clear();
+        window.location.href = '/';
+      }
     buscarClinica() {
         let jwt = localStorage.getItem('usuario-spmedgroup');
         axios.get(`http://192.168.3.84:5000/api/clinicas`, {
@@ -51,6 +56,11 @@ class ListarClinica extends Component {
             <div className="clinica--listar">
                 <div className="cadastrar--listar__menu">
                     <Menu />
+                </div>
+                <div className="logout">
+                    <button onClick={this.realizarLogout.bind(this)}>
+                Sair 
+            </button>
                 </div>
                 <h1 className="clinica--listar__titulo">Listar Clínica</h1>
 

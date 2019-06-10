@@ -6,6 +6,9 @@ import Menu from "../../components/Menu/Menu"
 import swal from 'sweetalert2'
 
 
+
+
+
 class Localizacoes extends Component {
     constructor() {
         super();
@@ -16,6 +19,7 @@ class Localizacoes extends Component {
             lat: '',
             long: '',
             especialidade: '',
+
         }
     }
     listaLocalizacoesRealTime() {
@@ -68,6 +72,10 @@ class Localizacoes extends Component {
                 console.log('erro' + erro)
             })
     }
+    realizarLogout() {
+        localStorage.clear();
+        window.location.href = '/';
+      }
     AlertConfirm() {
         swal.fire({
             position: 'center-center',
@@ -75,7 +83,7 @@ class Localizacoes extends Component {
             title: 'Localização Cadastrada',
             showConfirmButton: false,
             timer: 1500
-          })
+        })
     }
     displayMarkers = () => {
         return this.state.listaLocalizacoes.map((localizacoes) => {
@@ -91,13 +99,21 @@ class Localizacoes extends Component {
         this.listaLocalizacoesRealTime();
     }
     render() {
+        console.warn("result return here", this.state.place)
         return (
             <div className="localizacao--listar">
                 <div className="cadastrar--listar__menu">
                     <Menu />
                 </div>
+                <div className="logout">
+                    <button onClick={this.realizarLogout.bind(this)}>
+                Sair 
+            </button>
+                </div>
                 <h1 className="localizacao--listar__titulo">Cadastrar Localização</h1>
+
                 <form onSubmit={this.salvarLocalizacao.bind(this)} noValidate className="localizacao--cadastrar__formulario">
+     
                     <div className="localizacao--cadastrar__form_all">
                         <div className="localizacao--cadastrar__form_a">
                             <input
